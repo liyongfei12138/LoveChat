@@ -107,12 +107,13 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
     
     
     //MARK: lazy load --
-    
     lazy var listLayout: UICollectionViewFlowLayout = {
         let listLayout = UICollectionViewFlowLayout.init()
         
         listLayout.itemSize = CGSize.init(width: 100, height: 100)
-        
+        listLayout.minimumLineSpacing = 10.0
+        listLayout.minimumInteritemSpacing = 10.0
+        listLayout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         return listLayout
     }()
     

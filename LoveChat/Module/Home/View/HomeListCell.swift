@@ -13,6 +13,7 @@ class HomeListCell: UICollectionViewCell {
     lazy var textLabel: UILabel = {
         let textLabel = UILabel.init()
         textLabel.text = "--"
+        textLabel.textAlignment = .center
         return textLabel
     }()
     
@@ -31,7 +32,9 @@ class HomeListCell: UICollectionViewCell {
     }
     
     func p_initialize() {
-        
+        self.contentView.backgroundColor = .white
+        self.contentView.cornerRadius = 5.0
+        self.contentView.addShadow()
     }
     
     func p_setUpUI() {
