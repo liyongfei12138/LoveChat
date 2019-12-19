@@ -47,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0D025CC23AB030300C5A53D /* LoveChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D025CC23AB030300C5A53D /* 恋爱宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "恋爱宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D025CF23AB030300C5A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D025D623AB030300C5A53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D025D823AB030600C5A53D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		B0D025CD23AB030300C5A53D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0D025CC23AB030300C5A53D /* LoveChat.app */,
+				B0D025CC23AB030300C5A53D /* 恋爱宝典.app */,
 				B0D025E223AB030600C5A53D /* LoveChatTests.xctest */,
 				B0D025ED23AB030600C5A53D /* LoveChatUITests.xctest */,
 			);
@@ -257,7 +257,7 @@
 			);
 			name = LoveChat;
 			productName = LoveChat;
-			productReference = B0D025CC23AB030300C5A53D /* LoveChat.app */;
+			productReference = B0D025CC23AB030300C5A53D /* 恋爱宝典.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B0D025E123AB030600C5A53D /* LoveChatTests */ = {
@@ -608,7 +608,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "恋爱宝典";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -628,7 +628,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "恋爱宝典";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
