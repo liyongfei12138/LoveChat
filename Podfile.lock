@@ -1,32 +1,64 @@
 PODS:
   - EmptyDataSet-Swift (5.0.0)
+  - HandyJSON (5.0.1)
   - IQKeyboardManagerSwift (6.5.4)
   - Pastel (0.6.0)
   - SnapKit (5.0.1)
+  - SwifterSwift (5.1.0):
+    - SwifterSwift/AppKit (= 5.1.0)
+    - SwifterSwift/CoreGraphics (= 5.1.0)
+    - SwifterSwift/CoreLocation (= 5.1.0)
+    - SwifterSwift/Dispatch (= 5.1.0)
+    - SwifterSwift/Foundation (= 5.1.0)
+    - SwifterSwift/MapKit (= 5.1.0)
+    - SwifterSwift/SceneKit (= 5.1.0)
+    - SwifterSwift/SpriteKit (= 5.1.0)
+    - SwifterSwift/SwiftStdlib (= 5.1.0)
+    - SwifterSwift/UIKit (= 5.1.0)
+  - SwifterSwift/AppKit (5.1.0)
+  - SwifterSwift/CoreGraphics (5.1.0)
+  - SwifterSwift/CoreLocation (5.1.0)
+  - SwifterSwift/Dispatch (5.1.0)
+  - SwifterSwift/Foundation (5.1.0)
+  - SwifterSwift/MapKit (5.1.0)
+  - SwifterSwift/SceneKit (5.1.0)
+  - SwifterSwift/SpriteKit (5.1.0)
+  - SwifterSwift/SwiftStdlib (5.1.0)
+  - SwifterSwift/UIKit (5.1.0)
+  - SwiftyJSON (5.0.0)
   - YNSearch (2.4.0)
 
 DEPENDENCIES:
   - EmptyDataSet-Swift
+  - HandyJSON
   - IQKeyboardManagerSwift
   - Pastel
   - SnapKit
+  - SwifterSwift
+  - SwiftyJSON
   - YNSearch
 
 SPEC REPOS:
   trunk:
     - EmptyDataSet-Swift
+    - HandyJSON
     - IQKeyboardManagerSwift
     - Pastel
     - SnapKit
+    - SwifterSwift
+    - SwiftyJSON
     - YNSearch
 
 SPEC CHECKSUMS:
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
+  HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YNSearch: 56d4aad4547fd1efce355cccc220a94735b1ea14
 
-PODFILE CHECKSUM: fc1d4a5eab68551240cdeea90e3243cde16c8df7
+PODFILE CHECKSUM: e21c8a5b61236e220c04cc08fe80fae48294fffc
 
 COCOAPODS: 1.8.4

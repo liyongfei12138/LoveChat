@@ -1,0 +1,88 @@
+{
+	"rbac_status": 1,
+	"status": true,
+	"errcode": 0,
+	"message": "信息获取成功",
+	"data": {
+		"list": [{
+			"title": "常用恋爱话术",
+			"color": "7ecef4",
+			"content": [{
+				"title": "开场白"
+			}, {
+				"title": "搭讪话术"
+			}, {
+				"title": "幽默聊天"
+			}, {
+				"title": "冷读话术"
+			}, {
+				"title": "名人名言"
+			}, {
+				"title": "表情话术"
+			}, {
+				"title": "初聊互动"
+			}]
+		}, {
+			"title": "打造高价值",
+			"color": "eb6877",
+			"content": [{
+				"title": "高价值展示"
+			}, {
+				"title": "废物测试"
+			}, {
+				"title": "好奇吸引"
+			}]
+		}, {
+			"title": "关系升级",
+			"color": "d598d4",
+			"content": [{
+				"title": "恋爱调情"
+			}, {
+				"title": "角色扮演"
+			}, {
+				"title": "暧昧聊天"
+			}, {
+				"title": "关系进挪"
+			}, {
+				"title": "关系升级"
+			}, {
+				"title": "合约恋人"
+			}, {
+				"title": "打情骂俏"
+			}, {
+				"title": "约会套路"
+			}, {
+				"title": "聊天模版"
+			}]
+		}, {
+			"title": "连环聊天惯例",
+			"color": "98d59d",
+			"content": [{
+				"title": "搭讪话术"
+			}, {
+				"title": "高价值展示"
+			}, {
+				"title": "情感话题"
+			}, {
+				"title": "废物测试"
+			}, {
+				"title": "化解IOD"
+			}, {
+				"title": "联系感建立"
+			}, {
+				"title": "表达兴趣"
+			}, {
+				"title": "情感共鸣"
+			}, {
+				"title": "异议处理"
+			}, {
+				"title": "隐性诱惑"
+			}, {
+				"title": "情感波动"
+			}, {
+				"title": "关系进挪"
+			}]
+		}],
+		"about_url": "\/index.php\/AppApi\/Web\/index"
+	}
+}
