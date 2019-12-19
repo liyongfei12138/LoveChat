@@ -8,9 +8,9 @@
 
 import UIKit
 
-@objc protocol FR_ClickDelegate {
+protocol FR_ClickDelegate {
     
-    @objc optional func fr_clickViewDelegte(section:Int)
+    func fr_clickViewDelegte(type:MoreRowType)
 }
 
 class MeSettingTableView: UITableView {
@@ -18,10 +18,19 @@ class MeSettingTableView: UITableView {
     var clickDelegate : FR_ClickDelegate?
     
     
-    lazy var dataArr: [MoreBaseModel] = {
+    private lazy var dataArr: [MoreBaseModel] = {
         let dataArr = MoreModel.getMoreListData()
         return dataArr
     }()
+    
+    private lazy var headView: MoreHeaderView = {
+        let headView = MoreHeaderView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200))
+        headView.clickBlock = {
+            self.clickDelegate?.fr_clickViewDelegte(type: MoreRowType.headImg)
+        }
+        return headView
+    }()
+    
 
 
 }
@@ -35,12 +44,13 @@ extension MeSettingTableView{
         self.showsVerticalScrollIndicator = false
         self.backgroundColor = ColorTableViewBG
         self.separatorStyle = .none
+        self.tableHeaderView = self.headView
     }
 }
 
 extension MeSettingTableView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    
         return 1
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,8 +60,11 @@ extension MeSettingTableView:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let model = self.dataArr[indexPath.section]
+        
+        
         let cell:SettingMainTableViewCell = SettingMainTableViewCell.reusableCell(tableView: tableView) as! SettingMainTableViewCell
-//        cell.configData(title: self.dataArr[indexPath.section],detail: self.detailArr[indexPath.section])
+        cell.configData(title: model.title ?? "", detail: model.detail ?? "",icon: model.icon)
         return cell
         
         
@@ -59,7 +72,9 @@ extension MeSettingTableView:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        self.clickDelegate?.fr_clickViewDelegte?(section: indexPath.section)
+        let model = self.dataArr[indexPath.section]
+        
+        self.clickDelegate?.fr_clickViewDelegte(type: model.type ?? .other)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -80,6 +95,6 @@ extension MeSettingTableView:UITableViewDelegate,UITableViewDataSource{
         return CGFloat.leastNormalMagnitude
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 13
+        return 8
     }
 }

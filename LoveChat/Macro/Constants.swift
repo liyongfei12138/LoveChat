@@ -43,7 +43,7 @@ public let GL_iPhone_X: Bool       =   (SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 
 public let GL_iPhone_X_Max: Bool   =   (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)   // iPhone XR,   iPhone XS Max
 
 // 颜色相关
-public let ColorTheme: UIColor          =   #colorLiteral(red: 0.9492068887, green: 0.3663697839, blue: 0.592133522, alpha: 1) // 主题颜色
+public let ColorTheme: UIColor          =   #colorLiteral(red: 0.9490196078, green: 0.3647058824, blue: 0.5921568627, alpha: 1) // 主题颜色
 public let ColorTabBar: UIColor         =   #colorLiteral(red: 0.1215686275, green: 0.1215686275, blue: 0.1215686275, alpha: 1)   // 0x393B42 控制器背景色
 public let ColorBlack: UIColor          =   #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)   // 0x000000 tabbar背景颜色
 public let ColorAlertBG: UIColor        =   #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4)   // 0x000000 alpha: 0.4 弹框背景色
@@ -65,6 +65,7 @@ public let TextColorLevel1 = UIColor.gl_hex(hex: 0x222222)
 public let TextColorLevel2 = UIColor.gl_hex(hex: 0x666666)
 public let TextColorLevel3 = UIColor.gl_hex(hex: 0x999999)
 
+
 // 字体样式
 public let FontNameDIN = "DIN Alternate"      // DIN Alternate
 public let FontNamePF_Regular = "PingFangSC-Regular"      // 苹方-常规体
@@ -76,4 +77,5 @@ public func SCALEWIDTH(width: CGFloat) -> CGFloat {
     
     return SCREEN_WIDTH / 375.0 * width 
 }
+
 

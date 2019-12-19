@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="email=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+  <link rel="shortcut icon" href=""/>
+  <link rel="stylesheet" type="text/css" href=""/>
+  <style type="text/css"></style>
+  <script type="text/javascript" src=""></script>
+  <title>Title</title>
+  <style>
+    html,body{
+      padding: 0;
+      margin: 0;
+    }
+    .advice{
+      width: 100%;
+      height: 100%;
+      padding: 6% 4%;
+      box-sizing: border-box;
+    }
+    .module{
+      margin-bottom: 9%;
+    }
+    .desc{
+      margin-bottom: 4%;
+    }
+    .tab span{
+      display: inline-block;
+      padding: 1.2% 8%;
+      margin-right: 4%;
+      border-radius: 20px;
+      background: #F2F2F2;
+      color: #afafaf;
+      font-size: 14px;
+    }
+    .active{
+      background: linear-gradient(to right, #F25D97, #E1C6DC) !important;
+      color: #ffffff !important;
+    }
+    .star{
+      color: #FF3700;
+    }
+    textarea{
+      width: 100%;
+      border: 2px solid #c7c7c7;
+      padding: 8px 10px;
+      box-sizing: border-box;
+      border-radius: 6px;
+      outline: none;
+    }
+    input{
+      width: 100%;
+      border: 1px solid #c7c7c7;
+      height: 35px;
+      text-indent: 6px;
+      border-radius: 6px;
+      background: #f2f2f2;
+      outline: none;
+    }
+    .btn{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    .advice-submit{
+      color: #fff ;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: linear-gradient(to right, #F25D97, #E1C6DC);
+      padding: 3.5%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+<div class="advice">
+  <div class="module">
+    <div class="desc">
+      <span class="star">*</span>
+      <span>请选择您建议的类型</span>
+    </div>
+    <div class="tab advice-type">
+      <span class="advice-type-tab active" onclick="checkAdvice(0)">bug</span>
+      <span class="advice-type-tab" onclick="checkAdvice(1)">使用卡顿</span>
+      <span class="advice-type-tab" onclick="checkAdvice(2)">其他</span>
+    </div>
+  </div>
+  <div class="module">
+    <div class="desc">
+      <span class="star">*</span>
+      <span>请输入您的建议内容</span>
+    </div>
+    <div>
+      <textarea name="" id="question" cols="30" rows="10" placeholder="请输入问题描述"></textarea>
+    </div>
+  </div>
+  <div class="module">
+    <div class="desc">身份信息</div>
+    <div class="tab user-type">
+      <span class="user-type-tab active" onclick="checkUser(0)">会员</span>
+      <span class="user-type-tab" onclick="checkUser(1)">用户</span>
+      <span class="user-type-tab" onclick="checkUser(2)">特别喜欢APP</span>
+    </div>
+  </div>
+  <div class="module">
+    <div class="desc">
+      <span class="star">*</span>
+      <span>请输入您的联系方式</span>
+    </div>
+    <div>
+      <input id="phone" type="text" placeholder="请输入手机号码" maxlength="11">
+    </div>
+  </div>
+  <div class="btn">
+    <span class="advice-submit" onclick="submit()">提交</span>
+  </div>
+</div>
+<script>
+/**
+ * 点击建议类型
+ */
+function checkAdvice(index) {
+  let elements = document.getElementsByClassName('advice-type-tab')
+  addClass(elements, index)
+}
+/**
+ * 点击用户信息
+ */
+function checkUser(index) {
+  let elements = document.getElementsByClassName('user-type-tab')
+  addClass(elements, index)
+}
+/**
+ * tab选种样式
+ */
+function addClass (elements, index) {
+  let length = elements.length;
+  for (let i = 0; i < length; i++) {
+    removeClass(elements[i] , 'active')
+  }
+  elements[index].classList.add('active')
+}
+/**
+ * 提交
+ */
+function submit() {
+  let reg=/^(((13[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[3-8]{1})|(18[0-9]{1})|(19[0-9]{1})|(14[5-7]{1}))+\d{8})$/
+  let phoneNumber = document.getElementById("phone").value;
+  if(!phoneNumber){
+    alert("请输入手机号码");
+    return false;
+  } else if(!reg.test(phoneNumber)){
+    alert("请输入正确的手机号码")
+    return false
+  }
+  let question = document.getElementById("question").value;
+  if(!question){
+    alert("请输入问题描述");
+    return false;
+  }
+  alert('提交成功，将在1~3个工作日内联系您')
+}
+
+/**
+ * 判断当前元素是否有active,移除当前选种样式
+ */
+function hasClass( elements,cName ){
+  return !!elements.className.match( new RegExp( "(\\s|^)" + cName + "(\\s|$)") )
+}
+function removeClass( elements,cName ){
+  if( hasClass( elements,cName ) ){
+    elements.className = elements.className.replace( new RegExp( "(\\s|^)" + cName + "(\\s|$)" ), " " )
+  }
+}
+</script>
+</body>
+</html>
