@@ -47,6 +47,10 @@ class MoreHeaderView: UIView {
         self.clickBlock!()
     }
     
+    public func reloadHeadImg(){
+        
+        self.iconImgView.image = SaveModel.getHeadImg()
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
