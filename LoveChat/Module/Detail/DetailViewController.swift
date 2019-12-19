@@ -12,6 +12,8 @@ class DetailViewController: BaseViewController {
 
     var detail : String = ""
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

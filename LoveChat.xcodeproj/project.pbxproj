@@ -31,6 +31,7 @@
 		B0D0261723AB041B00C5A53D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261623AB041B00C5A53D /* Constants.swift */; };
 		B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261A23AB04C700C5A53D /* DetailViewController.swift */; };
 		B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261C23AB04D100C5A53D /* SearchViewController.swift */; };
+		B0D0262023AB4BE400C5A53D /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261F23AB4BE400C5A53D /* MoreViewController.swift */; };
 		C390798EB105CEAEC720DD00 /* Pods_LoveChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +61,7 @@
 		5DCD5FD623AB4E3C00634253 /* index.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		5DCD5FD823AB4F9F00634253 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0D025CC23AB030300C5A53D /* LoveChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D025CC23AB030300C5A53D /* 恋爱宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "恋爱宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D025CF23AB030300C5A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D025D623AB030300C5A53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D025D823AB030600C5A53D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		B0D0261623AB041B00C5A53D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B0D0261A23AB04C700C5A53D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B0D0261C23AB04D100C5A53D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B0D0261F23AB4BE400C5A53D /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		B6CA670671560913579F1413 /* Pods-LoveChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveChat.debug.xcconfig"; path = "Target Support Files/Pods-LoveChat/Pods-LoveChat.debug.xcconfig"; sourceTree = "<group>"; };
 		F8438C4873AA5D10AEEE082D /* Pods-LoveChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveChat.release.xcconfig"; path = "Target Support Files/Pods-LoveChat/Pods-LoveChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,7 +164,7 @@
 		B0D025CD23AB030300C5A53D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0D025CC23AB030300C5A53D /* LoveChat.app */,
+				B0D025CC23AB030300C5A53D /* 恋爱宝典.app */,
 				B0D025E223AB030600C5A53D /* LoveChatTests.xctest */,
 				B0D025ED23AB030600C5A53D /* LoveChatUITests.xctest */,
 			);
@@ -229,6 +231,7 @@
 		B0D0261123AB03A400C5A53D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				B0D0261E23AB4B8900C5A53D /* More */,
 				B0D0261923AB04B500C5A53D /* Search */,
 				B0D0261823AB04AF00C5A53D /* Detail */,
 				B0D0261223AB03B900C5A53D /* Home */,
@@ -271,6 +274,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		B0D0261E23AB4B8900C5A53D /* More */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0261F23AB4BE400C5A53D /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		EC7E7DA5D54EBDFA7C608375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +318,7 @@
 			);
 			name = LoveChat;
 			productName = LoveChat;
-			productReference = B0D025CC23AB030300C5A53D /* LoveChat.app */;
+			productReference = B0D025CC23AB030300C5A53D /* 恋爱宝典.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B0D025E123AB030600C5A53D /* LoveChatTests */ = {
@@ -476,6 +487,8 @@
 				B0D0260E23AB037E00C5A53D /* TableViewCellReusable.swift in Sources */,
 				5DCD5FD923AB4F9F00634253 /* Header.swift in Sources */,
 				B0D0260C23AB037E00C5A53D /* BaseView.swift in Sources */,
+				B0D0262023AB4BE400C5A53D /* MoreViewController.swift in Sources */,
+				B0D0261423AB03D400C5A53D /* HomeViewController.swift in Sources */,
 				B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */,
 				B0D0260B23AB037E00C5A53D /* BaseNavigationController.swift in Sources */,
 				B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */,
@@ -664,7 +677,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "恋爱宝典";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -684,7 +697,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "恋爱宝典";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

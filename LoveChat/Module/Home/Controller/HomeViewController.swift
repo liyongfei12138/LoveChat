@@ -10,6 +10,11 @@ import UIKit
 import HandyJSON
 class HomeViewController: BaseViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: self.moreBtn)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,14 +71,33 @@ class HomeViewController: BaseViewController {
         
     }
     
+     @objc func clickMoreBtn(){
+        let moreVC = MoreViewController()
+        self.navigationController?.pushViewController(moreVC, animated: true)
+        
+    }
+    
+    // override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    //     let detailvc = DetailViewController.init(title:"恋爱话术")
+    //     self.navigationController?.pushViewController(detailvc, animated: true)
+        
+    // }
+
     lazy var listView: HomeListView = {
         let listView = HomeListView.init(frame: .zero)
-        listView.selectedBlock = { (_ indexPath: IndexPath, _ title: String?) in
+        listView.selectedBlock = {[weak self] (_ indexPath: IndexPath, _ title: String?)  in
             
             print("index: \(indexPath), title: \(title)")
-            
+            let detailvc = DetailViewController.init(title:title ?? "")
+            self?.navigationController?.pushViewController(detailvc, animated: true)
         }
         return listView
     }()
 
+    private lazy var moreBtn: UIButton = {
+        let moreBtn = UIButton.init(type: .custom)
+        moreBtn.setImage(UIImage(named: "home_more"), for: .normal)
+        moreBtn.addTarget(self, action: #selector(clickMoreBtn), for: .touchUpInside)
+        return moreBtn
+    }()
 }

@@ -41,13 +41,19 @@ open class BaseViewController: UIViewController {
     open func gl_customInitialize() {
         self.view.backgroundColor = ColorWhite
         self.navigationItem.backBarButtonItem = self.customBackBtn
-        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .white
         // 配置标题颜色
-        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         if self.titleTextAttributes != nil {
             self.navigationController?.navigationBar.titleTextAttributes = self.titleTextAttributes
         }
+    }
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage.gl_image(color: ColorTheme, size: CGSize(width: 1, height: 1)), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
 
