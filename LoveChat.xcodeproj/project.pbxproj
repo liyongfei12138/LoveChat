@@ -1,0 +1,763 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025CF23AB030300C5A53D /* AppDelegate.swift */; };
+		B0D025D723AB030300C5A53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D523AB030300C5A53D /* Main.storyboard */; };
+		B0D025D923AB030600C5A53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D823AB030600C5A53D /* Assets.xcassets */; };
+		B0D025DC23AB030600C5A53D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D025DA23AB030600C5A53D /* LaunchScreen.storyboard */; };
+		B0D025E723AB030600C5A53D /* LoveChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025E623AB030600C5A53D /* LoveChatTests.swift */; };
+		B0D025F223AB030600C5A53D /* LoveChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025F123AB030600C5A53D /* LoveChatUITests.swift */; };
+		B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260023AB037E00C5A53D /* BaseTabBarController.swift */; };
+		B0D0260A23AB037E00C5A53D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260123AB037E00C5A53D /* BaseViewController.swift */; };
+		B0D0260B23AB037E00C5A53D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260223AB037E00C5A53D /* BaseNavigationController.swift */; };
+		B0D0260C23AB037E00C5A53D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260323AB037E00C5A53D /* BaseView.swift */; };
+		B0D0260D23AB037E00C5A53D /* UIColorDarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260523AB037E00C5A53D /* UIColorDarkMode.swift */; };
+		B0D0260E23AB037E00C5A53D /* TableViewCellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260623AB037E00C5A53D /* TableViewCellReusable.swift */; };
+		B0D0260F23AB037E00C5A53D /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260723AB037E00C5A53D /* ClassName.swift */; };
+		B0D0261023AB037E00C5A53D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0260823AB037E00C5A53D /* StringExtension.swift */; };
+		B0D0261423AB03D400C5A53D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261323AB03D400C5A53D /* HomeViewController.swift */; };
+		B0D0261723AB041B00C5A53D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261623AB041B00C5A53D /* Constants.swift */; };
+		B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261A23AB04C700C5A53D /* DetailViewController.swift */; };
+		B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261C23AB04D100C5A53D /* SearchViewController.swift */; };
+		C390798EB105CEAEC720DD00 /* Pods_LoveChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0D025E323AB030600C5A53D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0D025C423AB030300C5A53D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0D025CB23AB030300C5A53D;
+			remoteInfo = LoveChat;
+		};
+		B0D025EE23AB030600C5A53D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0D025C423AB030300C5A53D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0D025CB23AB030300C5A53D;
+			remoteInfo = LoveChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D025CC23AB030300C5A53D /* LoveChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D025CF23AB030300C5A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0D025D623AB030300C5A53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0D025D823AB030600C5A53D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0D025DB23AB030600C5A53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0D025DD23AB030600C5A53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D025E223AB030600C5A53D /* LoveChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoveChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D025E623AB030600C5A53D /* LoveChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveChatTests.swift; sourceTree = "<group>"; };
+		B0D025E823AB030600C5A53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D025ED23AB030600C5A53D /* LoveChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoveChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D025F123AB030600C5A53D /* LoveChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveChatUITests.swift; sourceTree = "<group>"; };
+		B0D025F323AB030600C5A53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D0260023AB037E00C5A53D /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		B0D0260123AB037E00C5A53D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B0D0260223AB037E00C5A53D /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		B0D0260323AB037E00C5A53D /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		B0D0260523AB037E00C5A53D /* UIColorDarkMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorDarkMode.swift; sourceTree = "<group>"; };
+		B0D0260623AB037E00C5A53D /* TableViewCellReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellReusable.swift; sourceTree = "<group>"; };
+		B0D0260723AB037E00C5A53D /* ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
+		B0D0260823AB037E00C5A53D /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B0D0261323AB03D400C5A53D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B0D0261623AB041B00C5A53D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B0D0261A23AB04C700C5A53D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B0D0261C23AB04D100C5A53D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B6CA670671560913579F1413 /* Pods-LoveChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveChat.debug.xcconfig"; path = "Target Support Files/Pods-LoveChat/Pods-LoveChat.debug.xcconfig"; sourceTree = "<group>"; };
+		F8438C4873AA5D10AEEE082D /* Pods-LoveChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveChat.release.xcconfig"; path = "Target Support Files/Pods-LoveChat/Pods-LoveChat.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0D025C923AB030300C5A53D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390798EB105CEAEC720DD00 /* Pods_LoveChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D025DF23AB030600C5A53D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D025EA23AB030600C5A53D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0D025C323AB030300C5A53D = {
+			isa = PBXGroup;
+			children = (
+				B0D025CE23AB030300C5A53D /* LoveChat */,
+				B0D025E523AB030600C5A53D /* LoveChatTests */,
+				B0D025F023AB030600C5A53D /* LoveChatUITests */,
+				B0D025CD23AB030300C5A53D /* Products */,
+				FAFB0DFCBFF722274D3C7C77 /* Pods */,
+				EC7E7DA5D54EBDFA7C608375 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B0D025CD23AB030300C5A53D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0D025CC23AB030300C5A53D /* LoveChat.app */,
+				B0D025E223AB030600C5A53D /* LoveChatTests.xctest */,
+				B0D025ED23AB030600C5A53D /* LoveChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0D025CE23AB030300C5A53D /* LoveChat */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0261523AB041B00C5A53D /* Macro */,
+				B0D0261123AB03A400C5A53D /* Module */,
+				B0D025FF23AB037E00C5A53D /* BaseClass */,
+				B0D0260423AB037E00C5A53D /* Extension */,
+				B0D025CF23AB030300C5A53D /* AppDelegate.swift */,
+				B0D025D523AB030300C5A53D /* Main.storyboard */,
+				B0D025D823AB030600C5A53D /* Assets.xcassets */,
+				B0D025DA23AB030600C5A53D /* LaunchScreen.storyboard */,
+				B0D025DD23AB030600C5A53D /* Info.plist */,
+			);
+			path = LoveChat;
+			sourceTree = "<group>";
+		};
+		B0D025E523AB030600C5A53D /* LoveChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0D025E623AB030600C5A53D /* LoveChatTests.swift */,
+				B0D025E823AB030600C5A53D /* Info.plist */,
+			);
+			path = LoveChatTests;
+			sourceTree = "<group>";
+		};
+		B0D025F023AB030600C5A53D /* LoveChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0D025F123AB030600C5A53D /* LoveChatUITests.swift */,
+				B0D025F323AB030600C5A53D /* Info.plist */,
+			);
+			path = LoveChatUITests;
+			sourceTree = "<group>";
+		};
+		B0D025FF23AB037E00C5A53D /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0260023AB037E00C5A53D /* BaseTabBarController.swift */,
+				B0D0260123AB037E00C5A53D /* BaseViewController.swift */,
+				B0D0260223AB037E00C5A53D /* BaseNavigationController.swift */,
+				B0D0260323AB037E00C5A53D /* BaseView.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		B0D0260423AB037E00C5A53D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0260523AB037E00C5A53D /* UIColorDarkMode.swift */,
+				B0D0260623AB037E00C5A53D /* TableViewCellReusable.swift */,
+				B0D0260723AB037E00C5A53D /* ClassName.swift */,
+				B0D0260823AB037E00C5A53D /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B0D0261123AB03A400C5A53D /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0261923AB04B500C5A53D /* Search */,
+				B0D0261823AB04AF00C5A53D /* Detail */,
+				B0D0261223AB03B900C5A53D /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		B0D0261223AB03B900C5A53D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0261323AB03D400C5A53D /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B0D0261523AB041B00C5A53D /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0261623AB041B00C5A53D /* Constants.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		B0D0261823AB04AF00C5A53D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0261A23AB04C700C5A53D /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B0D0261923AB04B500C5A53D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0261C23AB04D100C5A53D /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EC7E7DA5D54EBDFA7C608375 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAFB0DFCBFF722274D3C7C77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6CA670671560913579F1413 /* Pods-LoveChat.debug.xcconfig */,
+				F8438C4873AA5D10AEEE082D /* Pods-LoveChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0D025CB23AB030300C5A53D /* LoveChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0D025F623AB030600C5A53D /* Build configuration list for PBXNativeTarget "LoveChat" */;
+			buildPhases = (
+				5B92003C99E1EC566FF1A5CB /* [CP] Check Pods Manifest.lock */,
+				B0D025C823AB030300C5A53D /* Sources */,
+				B0D025C923AB030300C5A53D /* Frameworks */,
+				B0D025CA23AB030300C5A53D /* Resources */,
+				3BF0EB4211AFA50FEF9A0B3B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoveChat;
+			productName = LoveChat;
+			productReference = B0D025CC23AB030300C5A53D /* LoveChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0D025E123AB030600C5A53D /* LoveChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0D025F923AB030600C5A53D /* Build configuration list for PBXNativeTarget "LoveChatTests" */;
+			buildPhases = (
+				B0D025DE23AB030600C5A53D /* Sources */,
+				B0D025DF23AB030600C5A53D /* Frameworks */,
+				B0D025E023AB030600C5A53D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0D025E423AB030600C5A53D /* PBXTargetDependency */,
+			);
+			name = LoveChatTests;
+			productName = LoveChatTests;
+			productReference = B0D025E223AB030600C5A53D /* LoveChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B0D025EC23AB030600C5A53D /* LoveChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0D025FC23AB030600C5A53D /* Build configuration list for PBXNativeTarget "LoveChatUITests" */;
+			buildPhases = (
+				B0D025E923AB030600C5A53D /* Sources */,
+				B0D025EA23AB030600C5A53D /* Frameworks */,
+				B0D025EB23AB030600C5A53D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0D025EF23AB030600C5A53D /* PBXTargetDependency */,
+			);
+			name = LoveChatUITests;
+			productName = LoveChatUITests;
+			productReference = B0D025ED23AB030600C5A53D /* LoveChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0D025C423AB030300C5A53D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = liyongfi;
+				TargetAttributes = {
+					B0D025CB23AB030300C5A53D = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					B0D025E123AB030600C5A53D = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = B0D025CB23AB030300C5A53D;
+					};
+					B0D025EC23AB030600C5A53D = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = B0D025CB23AB030300C5A53D;
+					};
+				};
+			};
+			buildConfigurationList = B0D025C723AB030300C5A53D /* Build configuration list for PBXProject "LoveChat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0D025C323AB030300C5A53D;
+			productRefGroup = B0D025CD23AB030300C5A53D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0D025CB23AB030300C5A53D /* LoveChat */,
+				B0D025E123AB030600C5A53D /* LoveChatTests */,
+				B0D025EC23AB030600C5A53D /* LoveChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0D025CA23AB030300C5A53D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D025DC23AB030600C5A53D /* LaunchScreen.storyboard in Resources */,
+				B0D025D923AB030600C5A53D /* Assets.xcassets in Resources */,
+				B0D025D723AB030300C5A53D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D025E023AB030600C5A53D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D025EB23AB030600C5A53D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BF0EB4211AFA50FEF9A0B3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoveChat/Pods-LoveChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoveChat/Pods-LoveChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoveChat/Pods-LoveChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B92003C99E1EC566FF1A5CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoveChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0D025C823AB030300C5A53D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D0260D23AB037E00C5A53D /* UIColorDarkMode.swift in Sources */,
+				B0D0261023AB037E00C5A53D /* StringExtension.swift in Sources */,
+				B0D0260A23AB037E00C5A53D /* BaseViewController.swift in Sources */,
+				B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */,
+				B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */,
+				B0D0260E23AB037E00C5A53D /* TableViewCellReusable.swift in Sources */,
+				B0D0260C23AB037E00C5A53D /* BaseView.swift in Sources */,
+				B0D0261423AB03D400C5A53D /* HomeViewController.swift in Sources */,
+				B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */,
+				B0D0260B23AB037E00C5A53D /* BaseNavigationController.swift in Sources */,
+				B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */,
+				B0D0260F23AB037E00C5A53D /* ClassName.swift in Sources */,
+				B0D0261723AB041B00C5A53D /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D025DE23AB030600C5A53D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D025E723AB030600C5A53D /* LoveChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D025E923AB030600C5A53D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0D025F223AB030600C5A53D /* LoveChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0D025E423AB030600C5A53D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0D025CB23AB030300C5A53D /* LoveChat */;
+			targetProxy = B0D025E323AB030600C5A53D /* PBXContainerItemProxy */;
+		};
+		B0D025EF23AB030600C5A53D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0D025CB23AB030300C5A53D /* LoveChat */;
+			targetProxy = B0D025EE23AB030600C5A53D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0D025D523AB030300C5A53D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0D025D623AB030300C5A53D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0D025DA23AB030600C5A53D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0D025DB23AB030600C5A53D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0D025F423AB030600C5A53D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0D025F523AB030600C5A53D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0D025F723AB030600C5A53D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6CA670671560913579F1413 /* Pods-LoveChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VC2APXSZ8B;
+				INFOPLIST_FILE = LoveChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B0D025F823AB030600C5A53D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8438C4873AA5D10AEEE082D /* Pods-LoveChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VC2APXSZ8B;
+				INFOPLIST_FILE = LoveChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B0D025FA23AB030600C5A53D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VC2APXSZ8B;
+				INFOPLIST_FILE = LoveChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoveChat.app/LoveChat";
+			};
+			name = Debug;
+		};
+		B0D025FB23AB030600C5A53D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VC2APXSZ8B;
+				INFOPLIST_FILE = LoveChatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoveChat.app/LoveChat";
+			};
+			name = Release;
+		};
+		B0D025FD23AB030600C5A53D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VC2APXSZ8B;
+				INFOPLIST_FILE = LoveChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LoveChat;
+			};
+			name = Debug;
+		};
+		B0D025FE23AB030600C5A53D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VC2APXSZ8B;
+				INFOPLIST_FILE = LoveChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LoveChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0D025C723AB030300C5A53D /* Build configuration list for PBXProject "LoveChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0D025F423AB030600C5A53D /* Debug */,
+				B0D025F523AB030600C5A53D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0D025F623AB030600C5A53D /* Build configuration list for PBXNativeTarget "LoveChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0D025F723AB030600C5A53D /* Debug */,
+				B0D025F823AB030600C5A53D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0D025F923AB030600C5A53D /* Build configuration list for PBXNativeTarget "LoveChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0D025FA23AB030600C5A53D /* Debug */,
+				B0D025FB23AB030600C5A53D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0D025FC23AB030600C5A53D /* Build configuration list for PBXNativeTarget "LoveChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0D025FD23AB030600C5A53D /* Debug */,
+				B0D025FE23AB030600C5A53D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0D025C423AB030300C5A53D /* Project object */;
+}
