@@ -18,15 +18,10 @@ class HomeViewController: BaseViewController {
         self.title = "恋爱话术"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let detailvc = DetailViewController.init(title:"恋爱话术")
+        self.navigationController?.pushViewController(detailvc, animated: true)
+        
     }
-    */
 
 }

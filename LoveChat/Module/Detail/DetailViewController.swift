@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: BaseViewController {
 
+    var detail : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +19,14 @@ class DetailViewController: BaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+ 
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+extension DetailViewController{
+    convenience init(title:String = "") {
+        self.init()
+        
+        self.title = title
+        self.detail = title
     }
-    */
-
 }
