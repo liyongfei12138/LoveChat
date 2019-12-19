@@ -26,6 +26,9 @@
 		B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261A23AB04C700C5A53D /* DetailViewController.swift */; };
 		B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261C23AB04D100C5A53D /* SearchViewController.swift */; };
 		B0D0262023AB4BE400C5A53D /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0261F23AB4BE400C5A53D /* MoreViewController.swift */; };
+		B0D0262323AB4E2900C5A53D /* MeSettingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0262223AB4E2900C5A53D /* MeSettingTableView.swift */; };
+		B0D0262623AB4EDE00C5A53D /* MoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0262523AB4EDE00C5A53D /* MoreModel.swift */; };
+		B0D0262823AB558C00C5A53D /* SettingMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D0262723AB558C00C5A53D /* SettingMainTableViewCell.swift */; };
 		C390798EB105CEAEC720DD00 /* Pods_LoveChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,9 @@
 		B0D0261A23AB04C700C5A53D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B0D0261C23AB04D100C5A53D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B0D0261F23AB4BE400C5A53D /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		B0D0262223AB4E2900C5A53D /* MeSettingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeSettingTableView.swift; sourceTree = "<group>"; };
+		B0D0262523AB4EDE00C5A53D /* MoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreModel.swift; sourceTree = "<group>"; };
+		B0D0262723AB558C00C5A53D /* SettingMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingMainTableViewCell.swift; sourceTree = "<group>"; };
 		B6CA670671560913579F1413 /* Pods-LoveChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveChat.debug.xcconfig"; path = "Target Support Files/Pods-LoveChat/Pods-LoveChat.debug.xcconfig"; sourceTree = "<group>"; };
 		F8438C4873AA5D10AEEE082D /* Pods-LoveChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveChat.release.xcconfig"; path = "Target Support Files/Pods-LoveChat/Pods-LoveChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,9 +233,28 @@
 		B0D0261E23AB4B8900C5A53D /* More */ = {
 			isa = PBXGroup;
 			children = (
+				B0D0262423AB4EC800C5A53D /* Model */,
+				B0D0262123AB4C7F00C5A53D /* View */,
 				B0D0261F23AB4BE400C5A53D /* MoreViewController.swift */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		B0D0262123AB4C7F00C5A53D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0262223AB4E2900C5A53D /* MeSettingTableView.swift */,
+				B0D0262723AB558C00C5A53D /* SettingMainTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0D0262423AB4EC800C5A53D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0D0262523AB4EDE00C5A53D /* MoreModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EC7E7DA5D54EBDFA7C608375 /* Frameworks */ = {
@@ -426,6 +451,7 @@
 			files = (
 				B0D0260D23AB037E00C5A53D /* UIColorDarkMode.swift in Sources */,
 				B0D0261023AB037E00C5A53D /* StringExtension.swift in Sources */,
+				B0D0262323AB4E2900C5A53D /* MeSettingTableView.swift in Sources */,
 				B0D0260A23AB037E00C5A53D /* BaseViewController.swift in Sources */,
 				B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */,
 				B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */,
@@ -437,6 +463,8 @@
 				B0D0260B23AB037E00C5A53D /* BaseNavigationController.swift in Sources */,
 				B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */,
 				B0D0260F23AB037E00C5A53D /* ClassName.swift in Sources */,
+				B0D0262823AB558C00C5A53D /* SettingMainTableViewCell.swift in Sources */,
+				B0D0262623AB4EDE00C5A53D /* MoreModel.swift in Sources */,
 				B0D0261723AB041B00C5A53D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
