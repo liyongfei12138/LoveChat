@@ -14,6 +14,7 @@
 		5DCD5FD423AB4BE300634253 /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5FD323AB4BE300634253 /* HomeListCell.swift */; };
 		5DCD5FD723AB4E3C00634253 /* index.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DCD5FD623AB4E3C00634253 /* index.json */; };
 		5DCD5FD923AB4F9F00634253 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5FD823AB4F9F00634253 /* Header.swift */; };
+		B090E15E23ACB47E00805A1C /* DetailNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090E15D23ACB47E00805A1C /* DetailNavView.swift */; };
 		B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025CF23AB030300C5A53D /* AppDelegate.swift */; };
 		B0D025D723AB030300C5A53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D523AB030300C5A53D /* Main.storyboard */; };
 		B0D025D923AB030600C5A53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D823AB030600C5A53D /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		5DCD5FD623AB4E3C00634253 /* index.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		5DCD5FD823AB4F9F00634253 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		97FEFC5DD5E51F0EB5CAD5B6 /* Pods_LoveChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B090E15D23ACB47E00805A1C /* DetailNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavView.swift; sourceTree = "<group>"; };
 		B0D025CC23AB030300C5A53D /* 恋爱宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "恋爱宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D025CF23AB030300C5A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D025D623AB030300C5A53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 				5DCD5FD623AB4E3C00634253 /* index.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		B090E15C23AC7C2200805A1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B090E15D23ACB47E00805A1C /* DetailNavView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B0D025C323AB030300C5A53D = {
@@ -277,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				B0D0261A23AB04C700C5A53D /* DetailViewController.swift */,
+				B090E15C23AC7C2200805A1C /* View */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -530,6 +541,7 @@
 				5DCD5FD923AB4F9F00634253 /* Header.swift in Sources */,
 				B0D0260C23AB037E00C5A53D /* BaseView.swift in Sources */,
 				B0D0262023AB4BE400C5A53D /* MoreViewController.swift in Sources */,
+				B090E15E23ACB47E00805A1C /* DetailNavView.swift in Sources */,
 				B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */,
 				B0D0260B23AB037E00C5A53D /* BaseNavigationController.swift in Sources */,
 				B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */,

@@ -32,7 +32,7 @@ class MeSettingTableView: UITableView {
     }()
     
 
-
+    
 }
  
 extension MeSettingTableView{
@@ -45,6 +45,8 @@ extension MeSettingTableView{
         self.backgroundColor = ColorTableViewBG
         self.separatorStyle = .none
         self.tableHeaderView = self.headView
+        self.bounces = false
+        
     }
 }
 
