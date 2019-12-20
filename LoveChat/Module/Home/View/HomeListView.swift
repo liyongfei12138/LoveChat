@@ -18,7 +18,7 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
     let HEAD_VIEW_1_HEIGHT: CGFloat = 200
     let HEAD_VIEW_2_HEIGHT: CGFloat = 40
     // 选中标题
-    var selectedBlock: ((_ indexPath: IndexPath, _ title: String?) -> ())?
+    var selectedBlock: ((_ indexPath: IndexPath, _ title: String?, _ index: String?) -> ())?
     // 点击搜索
     var searchAction: (() -> ())?
     
@@ -97,6 +97,7 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
         if self.selectedBlock != nil {
             
             var title: String?
+            var index: String?
             
             let pageModel: HomePageModel? = self.dataModels?[indexPath.section]
             
@@ -104,9 +105,10 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
             
             if item != nil {
                 title = item?.title
+                index = item?.index
             }
             
-            self.selectedBlock!(indexPath, title)
+            self.selectedBlock!(indexPath, title, index)
         }
     }
     
@@ -165,7 +167,7 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
     lazy var listLayout: UICollectionViewFlowLayout = {
         let listLayout = UICollectionViewFlowLayout.init()
         
-        listLayout.itemSize = CGSize.init(width: (SCREEN_WIDTH - (20*4)) / 3, height: 100)
+        listLayout.itemSize = CGSize.init(width: (SCREEN_WIDTH - (20*4)) / 3, height: 50)
         listLayout.minimumLineSpacing = 20.0
         listLayout.minimumInteritemSpacing = 20.0
         listLayout.sectionInset = UIEdgeInsets.init(top: 10, left: 20, bottom: 10, right: 20)

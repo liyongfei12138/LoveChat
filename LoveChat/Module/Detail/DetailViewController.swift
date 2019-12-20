@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: BaseViewController {
 
     var detail : String = ""
-    
+    var index : String = ""
     lazy var navView: DetailNavView = {
         let navView = DetailNavView.init(title:self.detail)
         navView.clickDelegate = self
@@ -39,7 +39,7 @@ class DetailViewController: BaseViewController {
         self.view.addSubview(self.listView)
         
         
-        self.listView.configData(dataArr:GetJson.getJsonWith(name: self.detail))
+        self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index))
         configLayou()
             
     }
@@ -66,10 +66,11 @@ extension DetailViewController: ClickNavDelegate{
     }
 }
 extension DetailViewController{
-    convenience init(title:String = "") {
+    convenience init(title:String = "",index:String = "") {
         self.init()
         
         self.title = title
         self.detail = title
+        self.index = index
     }
 }

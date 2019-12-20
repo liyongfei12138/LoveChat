@@ -81,7 +81,7 @@ class HomeHeadView: UICollectionReusableView {
     lazy var backView: UIView = {
         
         let backView = UIView.init(frame: .zero)
-        backView.bbc_addGradient(startPoint: GradientPoint.top, endPoint: GradientPoint.bottom)
+        backView.gl_addGradient(startPoint: GradientPoint.top, endPoint: GradientPoint.bottom)
         return backView
     }()
  

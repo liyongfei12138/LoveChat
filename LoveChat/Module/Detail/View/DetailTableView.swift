@@ -24,13 +24,15 @@ extension DetailTableView{
         self.showsVerticalScrollIndicator = false
         self.backgroundColor = ColorTableViewBG
         self.separatorStyle = .none
-//        self.bounces = false
+        self.rowHeight = UITableView.automaticDimension
+        self.estimatedRowHeight = 44
         
     }
     
     func configData(dataArr:[Dictionary<String,Any>]) {
         self.dataArr = dataArr
         self.reloadData()
+        
     }
 }
 
@@ -49,7 +51,8 @@ extension DetailTableView:UITableViewDelegate,UITableViewDataSource{
         
         
         let cell:DetailTableViewCell = DetailTableViewCell.reusableCell(tableView: tableView) as! DetailTableViewCell
-        cell.backgroundColor = .random
+//        cell.backgroundColor = .random
+        cell.configData(women: self.dataArr[indexPath.section]["title"] as! String, man: self.dataArr[indexPath.section]["content"] as! String)
         return cell
         
         
@@ -59,10 +62,7 @@ extension DetailTableView:UITableViewDelegate,UITableViewDataSource{
 
         
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 50
-    }
+
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         return UIView()

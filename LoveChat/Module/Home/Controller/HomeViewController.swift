@@ -10,6 +10,8 @@ import UIKit
 import HandyJSON
 class HomeViewController: BaseViewController {
 
+    var dataModels: [HomePageModel]?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: self.moreBtn)
@@ -59,9 +61,9 @@ class HomeViewController: BaseViewController {
                     if dataDict != nil {
                         
                         let list: [Any]? = dataDict?["list"] as? [Any]
-                        let models: [HomePageModel]? = [HomePageModel].deserialize(from: list) as? [HomePageModel]
-                        print(models)
-                        self.listView.updateList(models: models)
+                        self.dataModels = [HomePageModel].deserialize(from: list) as? [HomePageModel]
+                        print(self.dataModels!)
+                        self.listView.updateList(models: self.dataModels)
                     }
                 }
                 
@@ -77,19 +79,45 @@ class HomeViewController: BaseViewController {
         
     }
   
+    // 获得所有话术
+    func p_getAllItems() -> [HomeListItem] {
+        
+        var allItems = [HomeListItem]()
+        
+        if self.dataModels != nil {
+            for pageModel in self.dataModels! {
+             
+                allItems = allItems + pageModel.content
+            }
+        }
+        return allItems
+    }
+    
+    //MARK: lazy load 
+    
     lazy var listView: HomeListView = {
         let listView = HomeListView.init(frame: .zero)
-        listView.selectedBlock = {[weak self] (_ indexPath: IndexPath, _ title: String?)  in
+        listView.selectedBlock = {[weak self] (_ indexPath: IndexPath, _ title: String?, _ index: String?)  in
             
             print("index: \(indexPath), title: \(title)")
-            let detailvc = DetailViewController.init(title:title ?? "")
+            let detailvc = DetailViewController.init(title:title ?? "", index:index ?? "" )
             self?.navigationController?.pushViewController(detailvc, animated: true)
         }
         
         listView.searchAction = { [weak self] () in
             
             print("搜索事件")
-            let searchVC = HomeSearchViewController.init()
+            let searchVC = SearchViewController.init(allDataSource: self?.p_getAllItems())
+            
+            searchVC.searchSelectedAction = { [weak self] (title: String?) in
+                
+                if title != nil {
+
+                    let detailvc = DetailViewController.init(title:title ?? "")
+                    self?.navigationController?.pushViewController(detailvc, animated: true)
+                }
+            }
+            
             self?.navigationController?.pushViewController(searchVC, animated: true)
         }
         
