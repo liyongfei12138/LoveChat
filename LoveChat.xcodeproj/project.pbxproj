@@ -9,7 +9,16 @@
 /* Begin PBXBuildFile section */
 		5D30244023ACB9AE001D7162 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30243F23ACB9AE001D7162 /* Gradient.swift */; };
 		5D30244223ACCA95001D7162 /* HomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30244123ACCA95001D7162 /* HomeSectionView.swift */; };
-		5D30244423ACD719001D7162 /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30244323ACD719001D7162 /* HomeSearchViewController.swift */; };
+		5D30244623AD17C2001D7162 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30244523AD17C2001D7162 /* StringExt.swift */; };
+		5D8E5F1223AD2A2400599B86 /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0423AD2A2400599B86 /* NSString+PinYin4Cocoa.m */; };
+		5D8E5F1323AD2A2400599B86 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0523AD2A2400599B86 /* unicode_to_hanyu_pinyin.txt */; };
+		5D8E5F1423AD2A2400599B86 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0A23AD2A2400599B86 /* PinyinHelper.m */; };
+		5D8E5F1523AD2A2400599B86 /* ChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0C23AD2A2400599B86 /* ChineseInclude.m */; };
+		5D8E5F1623AD2A2400599B86 /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0D23AD2A2400599B86 /* HanyuPinyinOutputFormat.m */; };
+		5D8E5F1723AD2A2400599B86 /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0E23AD2A2400599B86 /* ZYPinYinSearch.m */; };
+		5D8E5F1823AD2A2400599B86 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0F23AD2A2400599B86 /* ChineseToPinyinResource.m */; };
+		5D8E5F1923AD2A2400599B86 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F1023AD2A2400599B86 /* PinyinFormatter.m */; };
+		5D8E5F1A23AD2A2400599B86 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F1123AD2A2400599B86 /* PinYinForObjc.m */; };
 		5DCD5EC823AB329200634253 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC423AB329200634253 /* HomeViewController.swift */; };
 		5DCD5EC923AB329200634253 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC623AB329200634253 /* HomeListView.swift */; };
 		5DCD5ECA23AB329200634253 /* HomeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC723AB329200634253 /* HomeHeadView.swift */; };
@@ -65,7 +74,25 @@
 /* Begin PBXFileReference section */
 		5D30243F23ACB9AE001D7162 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		5D30244123ACCA95001D7162 /* HomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionView.swift; sourceTree = "<group>"; };
-		5D30244323ACD719001D7162 /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
+		5D30244523AD17C2001D7162 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		5D8E5EFB23AD287D00599B86 /* LoveChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoveChat-Bridging-Header.h"; sourceTree = "<group>"; };
+		5D8E5F0123AD2A2400599B86 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
+		5D8E5F0223AD2A2400599B86 /* HanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		5D8E5F0323AD2A2400599B86 /* ChineseInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseInclude.h; sourceTree = "<group>"; };
+		5D8E5F0423AD2A2400599B86 /* NSString+PinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin4Cocoa.m"; sourceTree = "<group>"; };
+		5D8E5F0523AD2A2400599B86 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
+		5D8E5F0623AD2A2400599B86 /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
+		5D8E5F0723AD2A2400599B86 /* ZYPinYinSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYPinYinSearch.h; sourceTree = "<group>"; };
+		5D8E5F0823AD2A2400599B86 /* PinYinForObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinForObjc.h; sourceTree = "<group>"; };
+		5D8E5F0923AD2A2400599B86 /* PinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinFormatter.h; sourceTree = "<group>"; };
+		5D8E5F0A23AD2A2400599B86 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
+		5D8E5F0B23AD2A2400599B86 /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
+		5D8E5F0C23AD2A2400599B86 /* ChineseInclude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseInclude.m; sourceTree = "<group>"; };
+		5D8E5F0D23AD2A2400599B86 /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		5D8E5F0E23AD2A2400599B86 /* ZYPinYinSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYPinYinSearch.m; sourceTree = "<group>"; };
+		5D8E5F0F23AD2A2400599B86 /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
+		5D8E5F1023AD2A2400599B86 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
+		5D8E5F1123AD2A2400599B86 /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
 		5DCD5EC423AB329200634253 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5DCD5EC623AB329200634253 /* HomeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		5DCD5EC723AB329200634253 /* HomeHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadView.swift; sourceTree = "<group>"; };
@@ -135,11 +162,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D8E5EFF23AD2A2400599B86 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				5D8E5F0023AD2A2400599B86 /* PinYinSearchLib */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		5D8E5F0023AD2A2400599B86 /* PinYinSearchLib */ = {
+			isa = PBXGroup;
+			children = (
+				5D8E5F0323AD2A2400599B86 /* ChineseInclude.h */,
+				5D8E5F0C23AD2A2400599B86 /* ChineseInclude.m */,
+				5D8E5F0623AD2A2400599B86 /* ChineseToPinyinResource.h */,
+				5D8E5F0F23AD2A2400599B86 /* ChineseToPinyinResource.m */,
+				5D8E5F0223AD2A2400599B86 /* HanyuPinyinOutputFormat.h */,
+				5D8E5F0D23AD2A2400599B86 /* HanyuPinyinOutputFormat.m */,
+				5D8E5F0B23AD2A2400599B86 /* NSString+PinYin4Cocoa.h */,
+				5D8E5F0423AD2A2400599B86 /* NSString+PinYin4Cocoa.m */,
+				5D8E5F0923AD2A2400599B86 /* PinyinFormatter.h */,
+				5D8E5F1023AD2A2400599B86 /* PinyinFormatter.m */,
+				5D8E5F0823AD2A2400599B86 /* PinYinForObjc.h */,
+				5D8E5F1123AD2A2400599B86 /* PinYinForObjc.m */,
+				5D8E5F0123AD2A2400599B86 /* PinyinHelper.h */,
+				5D8E5F0A23AD2A2400599B86 /* PinyinHelper.m */,
+				5D8E5F0523AD2A2400599B86 /* unicode_to_hanyu_pinyin.txt */,
+				5D8E5F0723AD2A2400599B86 /* ZYPinYinSearch.h */,
+				5D8E5F0E23AD2A2400599B86 /* ZYPinYinSearch.m */,
+			);
+			path = PinYinSearchLib;
+			sourceTree = "<group>";
+		};
 		5DCD5EC323AB329200634253 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				5DCD5EC423AB329200634253 /* HomeViewController.swift */,
-				5D30244323ACD719001D7162 /* HomeSearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +254,7 @@
 		B0D025CE23AB030300C5A53D /* LoveChat */ = {
 			isa = PBXGroup;
 			children = (
+				5D8E5EFF23AD2A2400599B86 /* Vendor */,
 				B0D0261523AB041B00C5A53D /* Macro */,
 				5DCD5FD523AB4E3C00634253 /* Resource */,
 				B0D0261123AB03A400C5A53D /* Module */,
@@ -242,6 +301,7 @@
 		B0D0260423AB037E00C5A53D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5D30244523AD17C2001D7162 /* StringExt.swift */,
 				5D30243F23ACB9AE001D7162 /* Gradient.swift */,
 				B0D0260523AB037E00C5A53D /* UIColorDarkMode.swift */,
 				B0D0260623AB037E00C5A53D /* TableViewCellReusable.swift */,
@@ -278,6 +338,7 @@
 				B0D0261623AB041B00C5A53D /* Constants.swift */,
 				5DCD5FD823AB4F9F00634253 /* Header.swift */,
 				B0D0262B23AB5FA600C5A53D /* SaveModel.swift */,
+				5D8E5EFB23AD287D00599B86 /* LoveChat-Bridging-Header.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -415,6 +476,7 @@
 				TargetAttributes = {
 					B0D025CB23AB030300C5A53D = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 					B0D025E123AB030600C5A53D = {
 						CreatedOnToolsVersion = 11.3;
@@ -451,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8E5F1323AD2A2400599B86 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				B0D025DC23AB030600C5A53D /* LaunchScreen.storyboard in Resources */,
 				B0D025D923AB030600C5A53D /* Assets.xcassets in Resources */,
 				B0D0262F23AB67CA00C5A53D /* advice.html in Resources */,
@@ -522,29 +585,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8E5F1423AD2A2400599B86 /* PinyinHelper.m in Sources */,
 				5DCD5ECA23AB329200634253 /* HomeHeadView.swift in Sources */,
 				B0D0260D23AB037E00C5A53D /* UIColorDarkMode.swift in Sources */,
 				B0D0262C23AB5FA600C5A53D /* SaveModel.swift in Sources */,
 				5DCD5EC923AB329200634253 /* HomeListView.swift in Sources */,
 				B0D0261023AB037E00C5A53D /* StringExtension.swift in Sources */,
 				B0D0262323AB4E2900C5A53D /* MeSettingTableView.swift in Sources */,
+				5D8E5F1223AD2A2400599B86 /* NSString+PinYin4Cocoa.m in Sources */,
 				5DCD5ECF23AB335900634253 /* HomePageModel.swift in Sources */,
 				B0D0260A23AB037E00C5A53D /* BaseViewController.swift in Sources */,
+				5D8E5F1623AD2A2400599B86 /* HanyuPinyinOutputFormat.m in Sources */,
+				5D8E5F1823AD2A2400599B86 /* ChineseToPinyinResource.m in Sources */,
 				B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */,
 				B0D0262A23AB5E0B00C5A53D /* MoreHeaderView.swift in Sources */,
+				5D30244623AD17C2001D7162 /* StringExt.swift in Sources */,
 				B0D0263023AB67CA00C5A53D /* FeebBack.swift in Sources */,
 				5D30244223ACCA95001D7162 /* HomeSectionView.swift in Sources */,
 				5D30244023ACB9AE001D7162 /* Gradient.swift in Sources */,
 				B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */,
+				5D8E5F1723AD2A2400599B86 /* ZYPinYinSearch.m in Sources */,
 				5DCD5FD423AB4BE300634253 /* HomeListCell.swift in Sources */,
 				B0D0260E23AB037E00C5A53D /* TableViewCellReusable.swift in Sources */,
+				5D8E5F1523AD2A2400599B86 /* ChineseInclude.m in Sources */,
 				5DCD5FD923AB4F9F00634253 /* Header.swift in Sources */,
 				B0D0260C23AB037E00C5A53D /* BaseView.swift in Sources */,
+				5D8E5F1923AD2A2400599B86 /* PinyinFormatter.m in Sources */,
+				5D8E5F1A23AD2A2400599B86 /* PinYinForObjc.m in Sources */,
 				B0D0262023AB4BE400C5A53D /* MoreViewController.swift in Sources */,
 				B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */,
 				B0D0260B23AB037E00C5A53D /* BaseNavigationController.swift in Sources */,
 				B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */,
-				5D30244423ACD719001D7162 /* HomeSearchViewController.swift in Sources */,
 				B0D0260F23AB037E00C5A53D /* ClassName.swift in Sources */,
 				B0D0262823AB558C00C5A53D /* SettingMainTableViewCell.swift in Sources */,
 				B0D0262623AB4EDE00C5A53D /* MoreModel.swift in Sources */,
@@ -723,6 +794,7 @@
 			baseConfigurationReference = B6CA670671560913579F1413 /* Pods-LoveChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VC2APXSZ8B;
 				INFOPLIST_FILE = LoveChat/Info.plist;
@@ -733,6 +805,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
 				PRODUCT_NAME = "恋爱宝典";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoveChat/Macro/LoveChat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -743,6 +817,7 @@
 			baseConfigurationReference = F8438C4873AA5D10AEEE082D /* Pods-LoveChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VC2APXSZ8B;
 				INFOPLIST_FILE = LoveChat/Info.plist;
@@ -753,6 +828,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovechat.good.LoveChat;
 				PRODUCT_NAME = "恋爱宝典";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoveChat/Macro/LoveChat-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

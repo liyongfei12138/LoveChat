@@ -9,7 +9,9 @@
 import Foundation
 import HandyJSON
 
+
 struct HomePageModel: HandyJSON  {
+
     var title: String = ""
     var color: String = ""
     var content: [HomeListItem] = [HomeListItem]()
@@ -18,4 +20,5 @@ struct HomePageModel: HandyJSON  {
 struct HomeListItem: HandyJSON {
     
     var title: String = ""
+    
 }

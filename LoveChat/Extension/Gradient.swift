@@ -55,9 +55,9 @@ extension UIView {
     /// - Parameter startPoint: 渐变开始的点
     /// - Parameter endPoint: 渐变结束的点
     /// - Parameter colors: 颜色数组
-    func bbc_addGradient(startPoint: GradientPoint = .left, endPoint: GradientPoint = .right, colors:[UIColor] = [UIColor.init(hex: 0xFCD6F0)!,UIColor.init(hex: 0xF8ACDD)!]) {
+    func gl_addGradient(startPoint: GradientPoint = .left, endPoint: GradientPoint = .right, colors:[UIColor] = [UIColor.init(hex: 0xFCD6F0)!,UIColor.init(hex: 0xF8ACDD)!]) {
         
-        self.bbc_removeGradient()
+        self.gl_removeGradient()
         
         let pastelView = PastelView(frame: self.bounds)
         pastelView.startPastelPoint = startPoint.pastelPoint
@@ -72,12 +72,6 @@ extension UIView {
             make.left.right.top.bottom.equalToSuperview()
         }
     }
-    
-//    // 添加禁用样式的渐变
-//    func bbc_addUnableGradient() {
-//
-//        bbc_addGradient(startPoint: .topLeft, endPoint: .bottomRight, colors: [ColorGradientLeftDown,ColorGradientRightUp])
-//    }
     
     
     /// 添加渐变
@@ -104,7 +98,7 @@ extension UIView {
     
     
     /// 移除渐变
-    func bbc_removeGradient() {
+    func gl_removeGradient() {
         
         for view in self.subviews {
             
