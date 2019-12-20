@@ -76,13 +76,7 @@ class HomeViewController: BaseViewController {
         self.navigationController?.pushViewController(moreVC, animated: true)
         
     }
-    
-    // override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    //     let detailvc = DetailViewController.init(title:"恋爱话术")
-    //     self.navigationController?.pushViewController(detailvc, animated: true)
-        
-    // }
-
+  
     lazy var listView: HomeListView = {
         let listView = HomeListView.init(frame: .zero)
         listView.selectedBlock = {[weak self] (_ indexPath: IndexPath, _ title: String?)  in
@@ -91,6 +85,14 @@ class HomeViewController: BaseViewController {
             let detailvc = DetailViewController.init(title:title ?? "")
             self?.navigationController?.pushViewController(detailvc, animated: true)
         }
+        
+        listView.searchAction = { [weak self] () in
+            
+            print("搜索事件")
+            let searchVC = HomeSearchViewController.init()
+            self?.navigationController?.pushViewController(searchVC, animated: true)
+        }
+        
         return listView
     }()
 

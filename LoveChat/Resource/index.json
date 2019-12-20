@@ -8,79 +8,110 @@
 			"title": "常用恋爱话术",
 			"color": "7ecef4",
 			"content": [{
-				"title": "开场白"
+				"title": "开场白",
+                "index":"content0001"
 			}, {
-				"title": "搭讪话术"
+				"title": "搭讪话术",
+                "index":"content0002"
 			}, {
-				"title": "幽默聊天"
+				"title": "幽默聊天",
+                "index":"content0003"
 			}, {
-				"title": "冷读话术"
+				"title": "搭讪话语",
+                "index":"content0004"
 			}, {
-				"title": "名人名言"
+				"title": "名人名言",
+                "index":"content0005"
 			}, {
-				"title": "表情话术"
+				"title": "表情话语",
+                "index":"content0006"
 			}, {
-				"title": "初聊互动"
+				"title": "初聊互动",
+                "index":"content0007"
 			}]
 		}, {
 			"title": "打造高价值",
 			"color": "eb6877",
 			"content": [{
-				"title": "高价值展示"
+				"title": "高价值体现",
+                "index":"content0008"
 			}, {
-				"title": "废物测试"
+				"title": "恋爱测试",
+                "index":"content0009"
 			}, {
-				"title": "好奇吸引"
+				"title": "聊天吸引",
+                "index":"content0010"
 			}]
 		}, {
 			"title": "关系升级",
 			"color": "d598d4",
 			"content": [{
-				"title": "恋爱调情"
+				"title": "恋爱调情",
+                "index":"content0011"
 			}, {
-				"title": "角色扮演"
+				"title": "角色扮演",
+                "index":"content0012"
 			}, {
-				"title": "暧昧聊天"
+				"title": "暧昧聊天",
+                "index":"content0013"
 			}, {
-				"title": "关系进挪"
+				"title": "关系进挪",
+                "index":"content0014"
 			}, {
-				"title": "关系升级"
+				"title": "关系升级",
+                "index":"content0015"
 			}, {
-				"title": "合约恋人"
+				"title": "合约恋人",
+                "index":"content0016"
 			}, {
-				"title": "打情骂俏"
+				"title": "打情骂俏",
+                "index":"content0017"
 			}, {
-				"title": "约会套路"
+				"title": "约会套路",
+                "index":"content0018"
 			}, {
-				"title": "聊天模版"
+				"title": "聊天模版",
+                "index":"content0019"
 			}]
 		}, {
 			"title": "连环聊天惯例",
 			"color": "98d59d",
 			"content": [{
-				"title": "搭讪话术"
+				"title": "搭讪话术",
+                "index":"content0020"
 			}, {
-				"title": "高价值展示"
+				"title": "高价值展示",
+                "index":"content0021"
 			}, {
-				"title": "情感话题"
+				"title": "情感话题",
+                "index":"content0022"
 			}, {
-				"title": "废物测试"
+				"title": "废物测试",
+                "index":"content0023"
 			}, {
-				"title": "化解IOD"
+				"title": "化解IOD",
+                "index":"content0024"
 			}, {
-				"title": "联系感建立"
+				"title": "联系感建立",
+                "index":"content0025"
 			}, {
-				"title": "表达兴趣"
+				"title": "表达兴趣",
+                "index":"content0026"
 			}, {
-				"title": "情感共鸣"
+				"title": "情感共鸣",
+                "index":"content0027"
 			}, {
-				"title": "异议处理"
+				"title": "异议处理",
+                "index":"content0028"
 			}, {
-				"title": "隐性诱惑"
+				"title": "隐性诱惑",
+                "index":"content0029"
 			}, {
-				"title": "情感波动"
+				"title": "情感波动",
+                "index":"content0030"
 			}, {
-				"title": "关系进挪"
+				"title": "关系加近",
+                "index":"content0031"
 			}]
 		}],
 		"about_url": "\/index.php\/AppApi\/Web\/index"
