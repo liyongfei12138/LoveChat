@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D30244023ACB9AE001D7162 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30243F23ACB9AE001D7162 /* Gradient.swift */; };
+		5D30244223ACCA95001D7162 /* HomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30244123ACCA95001D7162 /* HomeSectionView.swift */; };
+		5D30244423ACD719001D7162 /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30244323ACD719001D7162 /* HomeSearchViewController.swift */; };
 		5DCD5EC823AB329200634253 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC423AB329200634253 /* HomeViewController.swift */; };
 		5DCD5EC923AB329200634253 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC623AB329200634253 /* HomeListView.swift */; };
 		5DCD5ECA23AB329200634253 /* HomeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC723AB329200634253 /* HomeHeadView.swift */; };
@@ -60,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D30243F23ACB9AE001D7162 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		5D30244123ACCA95001D7162 /* HomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionView.swift; sourceTree = "<group>"; };
+		5D30244323ACD719001D7162 /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
 		5DCD5EC423AB329200634253 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5DCD5EC623AB329200634253 /* HomeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		5DCD5EC723AB329200634253 /* HomeHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				5DCD5EC423AB329200634253 /* HomeViewController.swift */,
+				5D30244323ACD719001D7162 /* HomeSearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 				5DCD5EC623AB329200634253 /* HomeListView.swift */,
 				5DCD5EC723AB329200634253 /* HomeHeadView.swift */,
 				5DCD5FD323AB4BE300634253 /* HomeListCell.swift */,
+				5D30244123ACCA95001D7162 /* HomeSectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 		B0D0260423AB037E00C5A53D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5D30243F23ACB9AE001D7162 /* Gradient.swift */,
 				B0D0260523AB037E00C5A53D /* UIColorDarkMode.swift */,
 				B0D0260623AB037E00C5A53D /* TableViewCellReusable.swift */,
 				B0D0260723AB037E00C5A53D /* ClassName.swift */,
@@ -524,6 +533,8 @@
 				B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */,
 				B0D0262A23AB5E0B00C5A53D /* MoreHeaderView.swift in Sources */,
 				B0D0263023AB67CA00C5A53D /* FeebBack.swift in Sources */,
+				5D30244223ACCA95001D7162 /* HomeSectionView.swift in Sources */,
+				5D30244023ACB9AE001D7162 /* Gradient.swift in Sources */,
 				B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */,
 				5DCD5FD423AB4BE300634253 /* HomeListCell.swift in Sources */,
 				B0D0260E23AB037E00C5A53D /* TableViewCellReusable.swift in Sources */,
@@ -533,6 +544,7 @@
 				B0D0261D23AB04D100C5A53D /* SearchViewController.swift in Sources */,
 				B0D0260B23AB037E00C5A53D /* BaseNavigationController.swift in Sources */,
 				B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */,
+				5D30244423ACD719001D7162 /* HomeSearchViewController.swift in Sources */,
 				B0D0260F23AB037E00C5A53D /* ClassName.swift in Sources */,
 				B0D0262823AB558C00C5A53D /* SettingMainTableViewCell.swift in Sources */,
 				B0D0262623AB4EDE00C5A53D /* MoreModel.swift in Sources */,
