@@ -20,6 +20,10 @@ class DetailViewController: BaseViewController {
     
     lazy var listView: DetailTableView = {
         let listView = DetailTableView.init()
+        listView.copyDelegate = self
+        listView.lockBlock = {
+            self.clickLockBtn()
+        }
         return listView
     }()
     
@@ -38,10 +42,31 @@ class DetailViewController: BaseViewController {
         self.view.addSubview(self.navView)
         self.view.addSubview(self.listView)
         
+        let isShow = false
         
-        self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index))
-        configLayou()
+        if isShow {
+            self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: isShow)
+            configLayou()
+        }else{
+            let listArr = GetJson.getJsonWith(name: self.index)
             
+            self.listView.configData(dataArr:[(listArr.first ?? [:])],isShow: isShow)
+            configLayou()
+        }
+    }
+    func clickLockBtn() {
+        let alert = UIAlertController.init(title: "解锁更多话术?", message: "点击【确定】解锁更多话术", preferredStyle: UIAlertController.Style.alert)
+        let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+            self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: true)
+        }
+        let action2 = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel) { (action) in
+            
+        }
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     func configLayou() {
         self.listView.snp.makeConstraints { (make) in
@@ -54,7 +79,7 @@ class DetailViewController: BaseViewController {
 
 }
 
-extension DetailViewController: ClickNavDelegate{
+extension DetailViewController: ClickNavDelegate,CopyTextDelegate{
     func clickNavWith(type: ClickNavType) {
         if type == .back {
             self.navigationController?.popViewController(animated: true)
@@ -63,6 +88,22 @@ extension DetailViewController: ClickNavDelegate{
             self.navigationController?.pushViewController(searchVC)
             
         }
+    }
+    
+    func copyTextWith(manText: String, women: String) {
+        let alert = UIAlertController.init(title: "选择复制话术", message: "话术将复制至您的剪贴板", preferredStyle: UIAlertController.Style.alert)
+        let action1 = UIAlertAction.init(title: "复制男生", style: UIAlertAction.Style.default) { (action) in
+            let pastboard = UIPasteboard.general
+            pastboard.string = manText
+        }
+        let action2 = UIAlertAction.init(title: "复制女生", style: UIAlertAction.Style.cancel) { (action) in
+            let pastboard = UIPasteboard.general
+            pastboard.string = women
+        }
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 extension DetailViewController{

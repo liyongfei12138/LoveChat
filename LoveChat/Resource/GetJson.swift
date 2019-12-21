@@ -26,6 +26,9 @@ struct GetJson {
                     if dataDict != nil {
                         
                         let list: [Any]? = dataDict?["list"] as? [Any]
+                        
+                  
+                        
                         print(list)
                         
                         return list as! [Dictionary<String, Any>]

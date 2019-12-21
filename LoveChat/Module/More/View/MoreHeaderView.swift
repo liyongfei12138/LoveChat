@@ -27,6 +27,10 @@ class MoreHeaderView: UIView {
         return iconImgView
     }()
     
+    func configImage() {
+        self.iconImgView.image = SaveModel.getHeadImg()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor  = ColorTheme

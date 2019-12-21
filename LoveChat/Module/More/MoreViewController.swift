@@ -87,6 +87,7 @@ extension MoreViewController: UIImagePickerControllerDelegate, UINavigationContr
             let image : UIImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
 
             SaveModel.saveHeadImg(image: image)
+            self.listView.configImage()
             self.dismiss(animated: true, completion: nil)
     }
 }

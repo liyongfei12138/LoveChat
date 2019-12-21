@@ -61,6 +61,7 @@
 		B090E21523AD597D00805A1C /* content0023.json in Resources */ = {isa = PBXBuildFile; fileRef = B090E20923AD597D00805A1C /* content0023.json */; };
 		B090E21623AD597D00805A1C /* content0027.json in Resources */ = {isa = PBXBuildFile; fileRef = B090E20A23AD597D00805A1C /* content0027.json */; };
 		B090E21723AD597D00805A1C /* content0026.json in Resources */ = {isa = PBXBuildFile; fileRef = B090E20B23AD597D00805A1C /* content0026.json */; };
+		B090E21923ADDB0E00805A1C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090E21823ADDB0E00805A1C /* ViewExtension.swift */; };
 		B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025CF23AB030300C5A53D /* AppDelegate.swift */; };
 		B0D025D723AB030300C5A53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D523AB030300C5A53D /* Main.storyboard */; };
 		B0D025D923AB030600C5A53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D823AB030600C5A53D /* Assets.xcassets */; };
@@ -171,6 +172,7 @@
 		B090E20923AD597D00805A1C /* content0023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content0023.json; sourceTree = "<group>"; };
 		B090E20A23AD597D00805A1C /* content0027.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content0027.json; sourceTree = "<group>"; };
 		B090E20B23AD597D00805A1C /* content0026.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content0026.json; sourceTree = "<group>"; };
+		B090E21823ADDB0E00805A1C /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B0D025CC23AB030300C5A53D /* 恋爱宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "恋爱宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D025CF23AB030300C5A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D025D623AB030300C5A53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				B0D0260623AB037E00C5A53D /* TableViewCellReusable.swift */,
 				B0D0260723AB037E00C5A53D /* ClassName.swift */,
 				B0D0260823AB037E00C5A53D /* StringExtension.swift */,
+				B090E21823ADDB0E00805A1C /* ViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				B0D0260A23AB037E00C5A53D /* BaseViewController.swift in Sources */,
 				5D8E5F1623AD2A2400599B86 /* HanyuPinyinOutputFormat.m in Sources */,
 				5D8E5F1823AD2A2400599B86 /* ChineseToPinyinResource.m in Sources */,
+				B090E21923ADDB0E00805A1C /* ViewExtension.swift in Sources */,
 				B0D0261B23AB04C700C5A53D /* DetailViewController.swift in Sources */,
 				B0D0262A23AB5E0B00C5A53D /* MoreHeaderView.swift in Sources */,
 				5D30244623AD17C2001D7162 /* StringExt.swift in Sources */,

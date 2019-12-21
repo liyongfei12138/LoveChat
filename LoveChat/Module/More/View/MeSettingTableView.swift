@@ -31,7 +31,9 @@ class MeSettingTableView: UITableView {
         return headView
     }()
     
-
+    func configImage() {
+        self.headView.configImage()
+    }
     
 }
  

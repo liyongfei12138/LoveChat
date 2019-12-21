@@ -51,11 +51,16 @@ class DetailTableViewCell: UITableViewCell {
         self.addSubview(self.manIcon)
         self.addSubview(self.manLabel)
         self.selectionStyle = .none
-        configLayout()
+       
     }
+    
+    
+    
     func configData(women:String,man:String)  {
         self.womenLabel.text = women
         self.manLabel.text = man
+//        self.addBlurEffect()
+        configLayout()
     }
     func configLayout()  {
         self.womenIcon.snp.makeConstraints { (make) in
