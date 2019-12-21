@@ -122,7 +122,7 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
         
         if indexPath.section == 0 {
             
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: String.gl_fromClass(Class: UICollectionReusableView.self), withReuseIdentifier: listHeadReuseId_1, for: indexPath)
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: listHeadReuseId_1, for: indexPath)
             
             self.header2.markView.backgroundColor = color
             self.header2.titleLabel.text = title
@@ -139,13 +139,11 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
                 make.left.right.equalToSuperview()
                 make.size.equalTo(CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_2_HEIGHT))
             }
-            headerView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: HEAD_VIEW_1_HEIGHT + HEAD_VIEW_2_HEIGHT)
             return headerView
         }else {
-            let header: HomeSectionView = collectionView.dequeueReusableSupplementaryView(ofKind: String.gl_fromClass(Class: UICollectionReusableView.self), withReuseIdentifier: listSectionHeadReuseId_1, for: indexPath) as! HomeSectionView
+            let header: HomeSectionView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: listSectionHeadReuseId_1, for: indexPath) as! HomeSectionView
             header.markView.backgroundColor = color
             header.titleLabel.text = title
-            header.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: HEAD_VIEW_2_HEIGHT)
             return header
         }
     }
@@ -178,8 +176,8 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
     lazy var homeListView: UICollectionView = {
         let homelistView = UICollectionView.init(frame: .zero, collectionViewLayout: self.listLayout)
         homelistView.register(HomeListCell.self, forCellWithReuseIdentifier: listCell_id_1)
-        homelistView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: String.gl_fromClass(Class: UICollectionReusableView.self), withReuseIdentifier: listHeadReuseId_1)
-        homelistView.register(HomeSectionView.self, forSupplementaryViewOfKind: String.gl_fromClass(Class: UICollectionReusableView.self), withReuseIdentifier: listSectionHeadReuseId_1)
+        homelistView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: listHeadReuseId_1)
+        homelistView.register(HomeSectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: listSectionHeadReuseId_1)
         homelistView.dataSource = self
         homelistView.delegate = self
         homelistView.backgroundColor = .white
