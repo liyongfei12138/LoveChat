@@ -62,7 +62,8 @@
 		B090E21623AD597D00805A1C /* content0027.json in Resources */ = {isa = PBXBuildFile; fileRef = B090E20A23AD597D00805A1C /* content0027.json */; };
 		B090E21723AD597D00805A1C /* content0026.json in Resources */ = {isa = PBXBuildFile; fileRef = B090E20B23AD597D00805A1C /* content0026.json */; };
 		B090E21923ADDB0E00805A1C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090E21823ADDB0E00805A1C /* ViewExtension.swift */; };
-		B099FD6723AE2B5D000C9A46 /* PayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099FD6623AE2B5D000C9A46 /* PayModel.swift */; };
+		B099FD6923AE5D2B000C9A46 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = B099FD6823AE5D2B000C9A46 /* about.html */; };
+		B099FD6B23AE5D44000C9A46 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099FD6A23AE5D44000C9A46 /* About.swift */; };
 		B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025CF23AB030300C5A53D /* AppDelegate.swift */; };
 		B0D025D723AB030300C5A53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D523AB030300C5A53D /* Main.storyboard */; };
 		B0D025D923AB030600C5A53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D025D823AB030600C5A53D /* Assets.xcassets */; };
@@ -174,7 +175,8 @@
 		B090E20A23AD597D00805A1C /* content0027.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content0027.json; sourceTree = "<group>"; };
 		B090E20B23AD597D00805A1C /* content0026.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content0026.json; sourceTree = "<group>"; };
 		B090E21823ADDB0E00805A1C /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		B099FD6623AE2B5D000C9A46 /* PayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayModel.swift; sourceTree = "<group>"; };
+		B099FD6823AE5D2B000C9A46 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		B099FD6A23AE5D44000C9A46 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		B0D025CC23AB030300C5A53D /* 恋爱宝典.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "恋爱宝典.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D025CF23AB030300C5A53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D025D623AB030300C5A53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -464,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				B0D0261A23AB04C700C5A53D /* DetailViewController.swift */,
-				B099FD6623AE2B5D000C9A46 /* PayModel.swift */,
 				B090E15C23AC7C2200805A1C /* View */,
 			);
 			path = Detail;
@@ -486,6 +487,8 @@
 				B0D0261F23AB4BE400C5A53D /* MoreViewController.swift */,
 				B0D0262D23AB67CA00C5A53D /* advice.html */,
 				B0D0262E23AB67CA00C5A53D /* FeebBack.swift */,
+				B099FD6A23AE5D44000C9A46 /* About.swift */,
+				B099FD6823AE5D2B000C9A46 /* about.html */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				B090E21323AD597D00805A1C /* content0022.json in Resources */,
 				B0D025D923AB030600C5A53D /* Assets.xcassets in Resources */,
 				B0D0262F23AB67CA00C5A53D /* advice.html in Resources */,
+				B099FD6923AE5D2B000C9A46 /* about.html in Resources */,
 				B090E21623AD597D00805A1C /* content0027.json in Resources */,
 				B090E1EC23AD586600805A1C /* content0010.json in Resources */,
 				B090E1F723AD58E100805A1C /* content0013.json in Resources */,
@@ -743,7 +747,6 @@
 				5DCD5EC923AB329200634253 /* HomeListView.swift in Sources */,
 				B0D0261023AB037E00C5A53D /* StringExtension.swift in Sources */,
 				B0D0262323AB4E2900C5A53D /* MeSettingTableView.swift in Sources */,
-				B099FD6723AE2B5D000C9A46 /* PayModel.swift in Sources */,
 				5D8E5F1223AD2A2400599B86 /* NSString+PinYin4Cocoa.m in Sources */,
 				5DCD5ECF23AB335900634253 /* HomePageModel.swift in Sources */,
 				B0D0260A23AB037E00C5A53D /* BaseViewController.swift in Sources */,
@@ -773,6 +776,7 @@
 				B0D0260923AB037E00C5A53D /* BaseTabBarController.swift in Sources */,
 				B0D0260F23AB037E00C5A53D /* ClassName.swift in Sources */,
 				B0D0262823AB558C00C5A53D /* SettingMainTableViewCell.swift in Sources */,
+				B099FD6B23AE5D44000C9A46 /* About.swift in Sources */,
 				B0D0262623AB4EDE00C5A53D /* MoreModel.swift in Sources */,
 				5DCD5EC823AB329200634253 /* HomeViewController.swift in Sources */,
 				B0D0261723AB041B00C5A53D /* Constants.swift in Sources */,
