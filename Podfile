@@ -15,6 +15,6 @@ pod 'SnapKit'	# 自动布局
 pod 'SwiftyJSON' # JSON转对象
 pod 'HandyJSON' # JSON 数据转模型
 pod 'SwifterSwift'  # 扩展类集合
-#pod 'Fuse'  # 模糊搜索
+pod 'SwiftyStoreKit'
 #pod "PYSearch" # 搜索
 end

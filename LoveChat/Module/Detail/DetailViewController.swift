@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyStoreKit
 class DetailViewController: BaseViewController {
 
     var detail : String = ""
@@ -57,7 +57,10 @@ class DetailViewController: BaseViewController {
     func clickLockBtn() {
         let alert = UIAlertController.init(title: "解锁更多话术?", message: "点击【确定】解锁更多话术", preferredStyle: UIAlertController.Style.alert)
         let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
-            self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: true)
+//            self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: true)
+            
+            self.getProductId()
+            
         }
         let action2 = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel) { (action) in
             
@@ -65,6 +68,47 @@ class DetailViewController: BaseViewController {
         
         alert.addAction(action1)
         alert.addAction(action2)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    func getProductId()  {
+        //获取商品信息
+        SwiftyStoreKit.retrieveProductsInfo(["AllChat"]) { result in
+            if result.retrievedProducts.first != nil {
+
+                self.payWithId()
+            }
+            else if result.invalidProductIDs.first != nil {
+                
+                self.payError()
+            }
+            else {
+                
+                self.payError()
+            }
+        }
+    }
+    func payWithId() {
+        
+        
+        SwiftyStoreKit.retrieveProductsInfo(["AllChat"]) { result in
+            if let product = result.retrievedProducts.first {
+                SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
+                    // handle result (same as above)
+                    
+                    print(result)
+                }
+            }
+        }
+    }
+    
+    func payError() {
+    
+        let alert = UIAlertController.init(title: "", message: "支付失败", preferredStyle: UIAlertController.Style.alert)
+        let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+       }
+
+        alert.addAction(action1)
         self.present(alert, animated: true, completion: nil)
         
     }
