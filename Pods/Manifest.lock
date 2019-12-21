@@ -3,6 +3,7 @@ PODS:
   - HandyJSON (5.0.1)
   - IQKeyboardManagerSwift (6.5.4)
   - Pastel (0.6.0)
+  - PKHUD (5.3.0)
   - SnapKit (5.0.1)
   - SwifterSwift (5.1.0):
     - SwifterSwift/AppKit (= 5.1.0)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - HandyJSON
   - IQKeyboardManagerSwift
   - Pastel
+  - PKHUD
   - SnapKit
   - SwifterSwift
   - SwiftyJSON
@@ -44,6 +46,7 @@ SPEC REPOS:
     - HandyJSON
     - IQKeyboardManagerSwift
     - Pastel
+    - PKHUD
     - SnapKit
     - SwifterSwift
     - SwiftyJSON
@@ -54,11 +57,12 @@ SPEC CHECKSUMS:
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   Pastel: 814f081efbe2859c37e65ee44f396e6e5be88619
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: c46e4d705ae53b6af4b975be9489a864a38d5eaf
+PODFILE CHECKSUM: 976fd057986a0c98494ec5361f766463f0b19380
 
 COCOAPODS: 1.8.4

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyStoreKit
+import PKHUD
 
 class DetailViewController: BaseViewController {
     
@@ -43,7 +43,7 @@ class DetailViewController: BaseViewController {
         self.view.addSubview(self.navView)
         self.view.addSubview(self.listView)
         
-        let isShow = false
+        let isShow = IAPManager.stand.isPay()
         
         if isShow {
             self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: isShow)
@@ -58,9 +58,8 @@ class DetailViewController: BaseViewController {
     func clickLockBtn() {
         let alert = UIAlertController.init(title: "解锁更多话术?", message: "点击【确定】解锁更多话术", preferredStyle: UIAlertController.Style.alert)
         let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
-            //            self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: true)
             
-            self.getProductId()
+            self.pay()
             
         }
         let action2 = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel) { (action) in
@@ -72,85 +71,29 @@ class DetailViewController: BaseViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
-//    func getProductId()  {
-//        //获取商品信息
-//        SwiftyStoreKit.retrieveProductsInfo(["AllChat"]) { result in
-//            if result.retrievedProducts.first != nil {
-//
-//                self.payWithId()
-//            }
-//            else if result.invalidProductIDs.first != nil {
-//
-//                self.payError()
-//            }
-//            else {
-//
-//                self.payError()
-//            }
-//        }
-//    }
     
-    
-    func getProductId() {
+    func pay() {
         
-        //通过product id 购买商品
-        SwiftyStoreKit.purchaseProduct("AllChat", quantity: 1, atomically: false) { result in
-            switch result {
-            case .success(let product):
-                //atomically true 表示走服务器获取最后支付结果
-                // fetch content from your server, then:
-                
-                self.paySuccess()
-                
-                if product.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(product.transaction)
-                }
-                print("Purchase Success: \(product.productId)")
-            case .error(let error):
-                self.payError()
-            }
-        }
+        HUD.show(HUDContentType.progress, onView: nil)
 
-        
-        
+        IAPManager.stand.payProductId(success: {
+            
+            HUD.hide()
+            self.unlockAllData()
+            
+        }, fail: {
+            
+            HUD.hide()
+
+            let alert = UIAlertController.init(title: "", message: "支付失败，请稍后再试", preferredStyle: UIAlertController.Style.alert)
+              let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+              }
+              
+              alert.addAction(action1)
+              self.present(alert, animated: true, completion: nil)
+        })
     }
     
-    
-    func payWithId() {
-        
-        
-        SwiftyStoreKit.retrieveProductsInfo(["AllChat"]) { result in
-            if let product = result.retrievedProducts.first {
-                SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
-                    // handle result (same as above)
-                    
-                    print(result)
-                }
-            }
-        }
-    }
-    
-    
-    func paySuccess() {
-        
-        let alert = UIAlertController.init(title: "", message: "支付成功", preferredStyle: UIAlertController.Style.alert)
-        let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
-        }
-        
-        alert.addAction(action1)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func payError() {
-        
-        let alert = UIAlertController.init(title: "", message: "支付失败", preferredStyle: UIAlertController.Style.alert)
-        let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
-        }
-        
-        alert.addAction(action1)
-        self.present(alert, animated: true, completion: nil)
-        
-    }
     func configLayou() {
         self.listView.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(self.navView.height)

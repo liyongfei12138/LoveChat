@@ -8,8 +8,9 @@
 
 import UIKit
 import StoreKit
+import PKHUD
 class MoreViewController: BaseViewController {
-
+    
     lazy var listView: MeSettingTableView = {
         let listView = MeSettingTableView.init()
         listView.clickDelegate = self
@@ -18,7 +19,7 @@ class MoreViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.view.addSubview(self.listView)
         configLayou()
@@ -32,7 +33,7 @@ class MoreViewController: BaseViewController {
     
     func selectImage() {
         let alertController=UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
+        
         let cancel=UIAlertAction(title:"取消", style: .cancel, handler: nil)
         let takingPictures=UIAlertAction(title:"拍照", style: .default)
         {
@@ -52,7 +53,7 @@ class MoreViewController: BaseViewController {
         self.present(alertController, animated:true, completion:nil)
     }
     func goCamera(){
-                    
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             let  cameraPicker = UIImagePickerController()
             cameraPicker.delegate = self
@@ -65,10 +66,10 @@ class MoreViewController: BaseViewController {
             print("不支持拍照")
             
         }
-
+        
     }
     func goImage(){
-
+        
         let photoPicker =  UIImagePickerController()
         photoPicker.delegate = self
         photoPicker.allowsEditing = true
@@ -81,32 +82,27 @@ class MoreViewController: BaseViewController {
 }
 extension MoreViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-            let image : UIImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
-
-            SaveModel.saveHeadImg(image: image)
-            self.listView.configImage()
-            self.dismiss(animated: true, completion: nil)
+        
+        let image : UIImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+        
+        SaveModel.saveHeadImg(image: image)
+        self.listView.configImage()
+        self.dismiss(animated: true, completion: nil)
     }
 }
+
 extension MoreViewController : FR_ClickDelegate{
     func fr_clickViewDelegte(type: MoreRowType) {
         switch type {
-            case .headImg:
-                self.selectImage()
+        case .headImg:
+            self.selectImage()
             break
-            case .vip:
-            break
-            case .reback_vip:
-            break
-            case .contact:
-                let phone = "telprompt://" + "15763372344"
-                UIApplication.shared.openURL(URL(string: phone)!)
-            break
-            case .cache:
-                let alert = UIAlertController.init(title: "", message: "清除缓存成功" , preferredStyle: UIAlertController.Style.alert)
+        case .vip:
+            
+            if IAPManager.stand.isPay() == true {
+                let alert = UIAlertController.init(title: "", message: "您已是VIP身份，无需再次购买" , preferredStyle: UIAlertController.Style.alert)
                 
                 let action = UIAlertAction.init(title: "确定", style: .cancel) { (action) in
                     
@@ -114,29 +110,86 @@ extension MoreViewController : FR_ClickDelegate{
                 alert.addAction(action)
                 
                 self.present(alert, animated: true, completion: nil)
+            }else {
+                HUD.show(HUDContentType.progress)
                 
+                IAPManager.stand.payProductId(success: {
+                    
+                    HUD.hide()
+                    
+                }, fail: {
+                    HUD.hide()
+                    
+                    let alert = UIAlertController.init(title: "", message: "支付失败，请稍后再试", preferredStyle: UIAlertController.Style.alert)
+                    let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+                    }
+                    
+                    alert.addAction(action1)
+                    self.present(alert, animated: true, completion: nil)
+                })
+            }
+            
             break
-            case .praise:
-                if #available(iOS 10.3, *) {
-                    SKStoreReviewController.requestReview()
-                } else {
-                    // Fallback on earlier versions
+        case .reback_vip:
+            
+            HUD.show(HUDContentType.labeledProgress(title: "正在恢复...", subtitle: nil))
+            
+            IAPManager.stand.restorePurchases(success: {
+                HUD.hide()
+                let alert = UIAlertController.init(title: "", message: "恢复购买成功", preferredStyle: UIAlertController.Style.alert)
+                let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
                 }
                 
-            break
-            case .about:
-                let about = About()
-                self.navigationController?.pushViewController(about)
+                alert.addAction(action1)
+                self.present(alert, animated: true, completion: nil)
                 
+            }, fail: {
+                HUD.hide()
+                let alert = UIAlertController.init(title: "", message: "恢复购买失败，请确实是否购买过此产品", preferredStyle: UIAlertController.Style.alert)
+                let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+                }
                 
+                alert.addAction(action1)
+                self.present(alert, animated: true, completion: nil)
+            })
+            
             break
-            case .feedback:
-                let feedVC = FeebBack()
-                self.navigationController?.pushViewController(feedVC)
+        case .contact:
+            let phone = "telprompt://" + "15763372344"
+            UIApplication.shared.openURL(URL(string: phone)!)
+            break
+        case .cache:
+            let alert = UIAlertController.init(title: "", message: "清除缓存成功" , preferredStyle: UIAlertController.Style.alert)
+            
+            let action = UIAlertAction.init(title: "确定", style: .cancel) { (action) in
+                
+            }
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            break
+        case .praise:
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            } else {
+                // Fallback on earlier versions
+            }
+            
+            break
+        case .about:
+            let about = About()
+            self.navigationController?.pushViewController(about)
+            
+            
+            break
+        case .feedback:
+            let feedVC = FeebBack()
+            self.navigationController?.pushViewController(feedVC)
             break
             
         default:
-        break
+            break
         }
     }
 }
