@@ -28,8 +28,8 @@ class HomeViewController: BaseViewController {
     }
      
     func p_initlize() {
-        self.title = "恋爱话术"
 
+        self.navigationItem.titleView = self.navImgView
     }
     
     func p_setUpUI(){
@@ -128,4 +128,13 @@ class HomeViewController: BaseViewController {
         moreBtn.addTarget(self, action: #selector(clickMoreBtn), for: .touchUpInside)
         return moreBtn
     }()
+    
+    
+    lazy var navImgView: UIImageView = {
+        let navImgView = UIImageView.init(frame: CGRect.init(x: 0, y: 0, width: 138, height: 38))
+        navImgView.contentMode = .scaleAspectFit
+        navImgView.image = UIImage.init(named: "icon_nav_title")
+        return navImgView
+    }()
+    
 }

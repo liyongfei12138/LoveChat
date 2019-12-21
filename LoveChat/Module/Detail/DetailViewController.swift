@@ -10,7 +10,7 @@ import UIKit
 import SwiftyStoreKit
 
 class DetailViewController: BaseViewController {
-
+    
     var detail : String = ""
     var index : String = ""
     lazy var navView: DetailNavView = {
@@ -39,7 +39,7 @@ class DetailViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.addSubview(self.navView)
         self.view.addSubview(self.listView)
         
@@ -58,9 +58,10 @@ class DetailViewController: BaseViewController {
     func clickLockBtn() {
         let alert = UIAlertController.init(title: "解锁更多话术?", message: "点击【确定】解锁更多话术", preferredStyle: UIAlertController.Style.alert)
         let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+            //            self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: true)
             
+            self.getProductId()
             
-
         }
         let action2 = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel) { (action) in
             
@@ -68,6 +69,85 @@ class DetailViewController: BaseViewController {
         
         alert.addAction(action1)
         alert.addAction(action2)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+//    func getProductId()  {
+//        //获取商品信息
+//        SwiftyStoreKit.retrieveProductsInfo(["AllChat"]) { result in
+//            if result.retrievedProducts.first != nil {
+//
+//                self.payWithId()
+//            }
+//            else if result.invalidProductIDs.first != nil {
+//
+//                self.payError()
+//            }
+//            else {
+//
+//                self.payError()
+//            }
+//        }
+//    }
+    
+    
+    func getProductId() {
+        
+        //通过product id 购买商品
+        SwiftyStoreKit.purchaseProduct("AllChat", quantity: 1, atomically: false) { result in
+            switch result {
+            case .success(let product):
+                //atomically true 表示走服务器获取最后支付结果
+                // fetch content from your server, then:
+                
+                self.paySuccess()
+                
+                if product.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(product.transaction)
+                }
+                print("Purchase Success: \(product.productId)")
+            case .error(let error):
+                self.payError()
+            }
+        }
+
+        
+        
+    }
+    
+    
+    func payWithId() {
+        
+        
+        SwiftyStoreKit.retrieveProductsInfo(["AllChat"]) { result in
+            if let product = result.retrievedProducts.first {
+                SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
+                    // handle result (same as above)
+                    
+                    print(result)
+                }
+            }
+        }
+    }
+    
+    
+    func paySuccess() {
+        
+        let alert = UIAlertController.init(title: "", message: "支付成功", preferredStyle: UIAlertController.Style.alert)
+        let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+        }
+        
+        alert.addAction(action1)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func payError() {
+        
+        let alert = UIAlertController.init(title: "", message: "支付失败", preferredStyle: UIAlertController.Style.alert)
+        let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+        }
+        
+        alert.addAction(action1)
         self.present(alert, animated: true, completion: nil)
         
     }
@@ -92,8 +172,16 @@ extension DetailViewController: ClickNavDelegate,CopyTextDelegate{
             self.navigationController?.popViewController(animated: true)
         }else{
             let searchVC = SearchViewController()
-            self.navigationController?.pushViewController(searchVC)
+            searchVC.searchSelectedAction = { [weak self] (title: String?) in
+                
+                if title != nil {
+                    
+                    let detailvc = DetailViewController.init(title:title ?? "")
+                    self?.navigationController?.pushViewController(detailvc, animated: true)
+                }
+            }
             
+            self.navigationController?.pushViewController(searchVC)
         }
     }
     
