@@ -66,8 +66,6 @@ class HomeViewController: BaseViewController {
                         self.listView.updateList(models: self.dataModels)
                     }
                 }
-                
-                
             }
         }
         
@@ -107,7 +105,7 @@ class HomeViewController: BaseViewController {
         listView.searchAction = { [weak self] () in
             
             print("搜索事件")
-            let searchVC = SearchViewController.init(allDataSource: self?.p_getAllItems())
+            let searchVC = SearchViewController.init()
             
             searchVC.searchSelectedAction = { [weak self] (title: String?) in
                 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyStoreKit
 
 class DetailViewController: BaseViewController {
 
@@ -57,7 +58,9 @@ class DetailViewController: BaseViewController {
     func clickLockBtn() {
         let alert = UIAlertController.init(title: "解锁更多话术?", message: "点击【确定】解锁更多话术", preferredStyle: UIAlertController.Style.alert)
         let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
-            self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: true)
+            
+            
+
         }
         let action2 = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel) { (action) in
             
@@ -73,10 +76,14 @@ class DetailViewController: BaseViewController {
             make.top.equalToSuperview().offset(self.navView.height)
             make.left.right.bottom.equalToSuperview()
         }
-        
     }
-
-
+    
+    /// 显示所有话术
+    func unlockAllData() {
+        
+        self.listView.configData(dataArr:GetJson.getJsonWith(name: self.index),isShow: true)
+    }
+    
 }
 
 extension DetailViewController: ClickNavDelegate,CopyTextDelegate{

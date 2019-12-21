@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchViewController: BaseViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-
+    
     var dataSource: [HomeListItem]?
     private var allDataSource: [HomeListItem]?
     private let searchVC_listView_cell_id = "searchVC_listView_cell_id"
@@ -18,11 +18,12 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         p_initialize()
         
         p_setUpUI()
         
+        p_loadData()
     }
     
     func p_initialize(){
@@ -49,21 +50,63 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
         }
     }
     
+    func p_loadData() {
+        
+        if self.allDataSource != nil {
+            self.allDataSource?.removeAll()
+            
+        }else {
+            self.allDataSource = [HomeListItem]()
+        }
+        
+        let jsonPath: String? = Bundle.main.path(forResource: "index", ofType: "json")
+        if jsonPath != nil {
+            let data: Data? = FileManager.default.contents(atPath: jsonPath!)
+            
+            if data != nil {
+                let object: [String: Any]? = try? data!.jsonObject() as? [String: Any]
+                
+                if object != nil {
+                    let dataDict: [String: Any]? = object!["data"] as? [String: Any]
+                    print(dataDict)
+                    
+                    if dataDict != nil {
+                        
+                        let list: [Any]? = dataDict?["list"] as? [Any]
+                        let dataModels: [HomePageModel]? = [HomePageModel].deserialize(from: list) as? [HomePageModel]
+                        
+                        if dataModels != nil {
+                            for pageModel in dataModels! {
+                                
+                                self.allDataSource = self.allDataSource! + pageModel.content
+                            }
+                            self.dataSource = self.allDataSource
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        self.listView.reloadData()
+        
+    }
+    
     func p_filter(searchText: String?) {
-   
+        
         if !String.gl_empty(string: searchText) && self.allDataSource != nil {
             
             var allItemTitles: [String] = [String]()
+            
+            for item in self.allDataSource! {
                 
-                for item in self.allDataSource! {
-                    
-                    allItemTitles.append(item.title)
-                }
+                allItemTitles.append(item.title)
+            }
             
             let result: [String]? = ZYPinYinSearch.search(withOriginalArray: allItemTitles, andSearchText: searchText!, andSearchByPropertyName: "") as? [String]
             
             if result != nil {
-            
+                
                 self.dataSource?.removeAll()
                 
                 for item in result! {
@@ -75,7 +118,7 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
             // 为空
             self.dataSource = self.allDataSource
         }
-            
+        
         self.listView.reloadData()
     }
     
@@ -100,15 +143,15 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
         listView.register(UITableViewCell.self, forCellReuseIdentifier: searchVC_listView_cell_id)
         return listView
     }()
-
+    
 }
-
-extension SearchViewController {
-    convenience init(allDataSource: [HomeListItem]?) {
-        self.init()
-        self.allDataSource = allDataSource
-    }
-}
+//
+//extension SearchViewController {
+//    convenience init(allDataSource: [HomeListItem]?) {
+//        self.init()
+//        self.allDataSource = allDataSource
+//    }
+//}
 
 extension SearchViewController {
     
@@ -156,7 +199,7 @@ extension SearchViewController {
         print("did selected search btn")
         
         self.p_filter(searchText: searchBar.text)
-
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
