@@ -125,6 +125,10 @@ extension MoreViewController : FR_ClickDelegate{
                 
             break
             case .about:
+                let about = About()
+                self.navigationController?.pushViewController(about)
+                
+                
             break
             case .feedback:
                 let feedVC = FeebBack()

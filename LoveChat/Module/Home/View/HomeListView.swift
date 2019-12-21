@@ -139,12 +139,13 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
                 make.left.right.equalToSuperview()
                 make.size.equalTo(CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_2_HEIGHT))
             }
-            
+            headerView.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: HEAD_VIEW_1_HEIGHT + HEAD_VIEW_2_HEIGHT)
             return headerView
         }else {
             let header: HomeSectionView = collectionView.dequeueReusableSupplementaryView(ofKind: String.gl_fromClass(Class: UICollectionReusableView.self), withReuseIdentifier: listSectionHeadReuseId_1, for: indexPath) as! HomeSectionView
             header.markView.backgroundColor = color
             header.titleLabel.text = title
+            header.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: HEAD_VIEW_2_HEIGHT)
             return header
         }
     }
@@ -171,7 +172,6 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
         listLayout.minimumLineSpacing = 20.0
         listLayout.minimumInteritemSpacing = 20.0
         listLayout.sectionInset = UIEdgeInsets.init(top: 10, left: 20, bottom: 10, right: 20)
-        
         return listLayout
     }()
     
