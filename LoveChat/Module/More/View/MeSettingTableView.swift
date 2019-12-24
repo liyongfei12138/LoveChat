@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FR_ClickDelegate {
-    
+    func fr_clickViewDelegte()
     func fr_clickViewDelegte(type:MoreRowType)
 }
 

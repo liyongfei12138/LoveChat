@@ -94,10 +94,17 @@ extension MoreViewController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 extension MoreViewController : FR_ClickDelegate{
+    func fr_clickViewDelegte() {
+        
+    }
+    
     func fr_clickViewDelegte(type: MoreRowType) {
         switch type {
         case .headImg:
             self.selectImage()
+            
+            
+
             break
         case .vip:
             

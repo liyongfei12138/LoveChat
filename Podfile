@@ -17,4 +17,6 @@ pod 'HandyJSON' # JSON 数据转模型
 pod 'SwifterSwift'  # 扩展类集合
 pod 'SwiftyStoreKit' # 内购
 pod 'PKHUD'
+pod 'Kingfisher'
+pod 'ZCycleView'
 end

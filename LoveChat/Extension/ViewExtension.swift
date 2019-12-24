@@ -18,4 +18,11 @@ extension UIView {
         blurView.layer.masksToBounds = true
         self.addSubview(blurView)
     }
+    open func addViewTapTarget(_ target: Any?, action: Selector) {
+     
+     self.isUserInteractionEnabled = true
+     let tap = UITapGestureRecognizer(target: target, action: action)
+     self.addGestureRecognizer(tap)
+     
+    }
 }

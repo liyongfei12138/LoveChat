@@ -38,7 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
-        self.window?.rootViewController = BaseNavigationController.init(rootViewController: HomeViewController())
+//        self.window?.rootViewController = BaseNavigationController.init(rootViewController: HomeViewController())
+        self.window?.rootViewController = BaseNavigationController.init(rootViewController: YFHomeViewController())
+        
         self.window?.makeKeyAndVisible()
         
         
