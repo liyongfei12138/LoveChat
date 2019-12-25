@@ -90,12 +90,7 @@ extension DetailTableView:UITableViewDelegate,UITableViewDataSource{
             btn.addTarget(self, action: #selector(clickLockBtn), for: .touchUpInside)
             view.addSubview(btn)
             return view
-            
-            
         }
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

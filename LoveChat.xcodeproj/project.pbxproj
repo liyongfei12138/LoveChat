@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1C659B23B3111F004D0B24 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1C659A23B3111F004D0B24 /* DetailModel.swift */; };
 		5D30244023ACB9AE001D7162 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30243F23ACB9AE001D7162 /* Gradient.swift */; };
 		5D30244223ACCA95001D7162 /* HomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30244123ACCA95001D7162 /* HomeSectionView.swift */; };
 		5D30244623AD17C2001D7162 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D30244523AD17C2001D7162 /* StringExt.swift */; };
@@ -19,7 +20,6 @@
 		5D8E5F1823AD2A2400599B86 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F0F23AD2A2400599B86 /* ChineseToPinyinResource.m */; };
 		5D8E5F1923AD2A2400599B86 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F1023AD2A2400599B86 /* PinyinFormatter.m */; };
 		5D8E5F1A23AD2A2400599B86 /* PinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E5F1123AD2A2400599B86 /* PinYinForObjc.m */; };
-		5DCD5EC823AB329200634253 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC423AB329200634253 /* HomeViewController.swift */; };
 		5DCD5EC923AB329200634253 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC623AB329200634253 /* HomeListView.swift */; };
 		5DCD5ECA23AB329200634253 /* HomeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5EC723AB329200634253 /* HomeHeadView.swift */; };
 		5DCD5ECF23AB335900634253 /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD5ECE23AB335900634253 /* HomePageModel.swift */; };
@@ -120,6 +120,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D1C659A23B3111F004D0B24 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		5D30243F23ACB9AE001D7162 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		5D30244123ACCA95001D7162 /* HomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionView.swift; sourceTree = "<group>"; };
 		5D30244523AD17C2001D7162 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
@@ -141,7 +142,6 @@
 		5D8E5F0F23AD2A2400599B86 /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
 		5D8E5F1023AD2A2400599B86 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
 		5D8E5F1123AD2A2400599B86 /* PinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinForObjc.m; sourceTree = "<group>"; };
-		5DCD5EC423AB329200634253 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5DCD5EC623AB329200634253 /* HomeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
 		5DCD5EC723AB329200634253 /* HomeHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadView.swift; sourceTree = "<group>"; };
 		5DCD5ECE23AB335900634253 /* HomePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
@@ -294,7 +294,6 @@
 		5DCD5EC323AB329200634253 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5DCD5EC423AB329200634253 /* HomeViewController.swift */,
 				B0070A0523B25EF70075EDDC /* YFHomeViewController.swift */,
 				B0070A0923B2649C0075EDDC /* YFHomeTableView.swift */,
 				B0070A0D23B2666A0075EDDC /* YFCellHeaderView.swift */,
@@ -521,6 +520,7 @@
 			isa = PBXGroup;
 			children = (
 				B0D0261C23AB04D100C5A53D /* SearchViewController.swift */,
+				5D1C659A23B3111F004D0B24 /* DetailModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -809,6 +809,7 @@
 				B0070A0E23B2666A0075EDDC /* YFCellHeaderView.swift in Sources */,
 				B0D0263023AB67CA00C5A53D /* FeebBack.swift in Sources */,
 				5D30244223ACCA95001D7162 /* HomeSectionView.swift in Sources */,
+				5D1C659B23B3111F004D0B24 /* DetailModel.swift in Sources */,
 				5D30244023ACB9AE001D7162 /* Gradient.swift in Sources */,
 				B0D025D023AB030300C5A53D /* AppDelegate.swift in Sources */,
 				5D8E5F1723AD2A2400599B86 /* ZYPinYinSearch.m in Sources */,
@@ -834,7 +835,6 @@
 				B099FD6B23AE5D44000C9A46 /* About.swift in Sources */,
 				B0D0262623AB4EDE00C5A53D /* MoreModel.swift in Sources */,
 				5DFAF7BC23AE6A82006C700E /* IAPManager.swift in Sources */,
-				5DCD5EC823AB329200634253 /* HomeViewController.swift in Sources */,
 				B0D0261723AB041B00C5A53D /* Constants.swift in Sources */,
 				B090E16223AD233100805A1C /* DetailTableViewCell.swift in Sources */,
 			);

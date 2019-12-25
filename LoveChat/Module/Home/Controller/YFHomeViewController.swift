@@ -93,6 +93,14 @@ extension YFHomeViewController:ClicHomekNavDelegate{
             self.navigationController?.pushViewController(moreVC, animated: true)
         }else{
             let searchVC = SearchViewController.init()
+            searchVC.searchSelectedAction = { (title: String?) in
+                
+                if title != nil {
+                    
+                    let detailvc = DetailViewController.init(title:title ?? "")
+                    self.navigationController?.pushViewController(detailvc, animated: true)
+                }
+            }
             self.navigationController?.pushViewController(searchVC)
         }
     }

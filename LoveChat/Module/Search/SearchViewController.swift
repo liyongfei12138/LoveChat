@@ -10,11 +10,15 @@ import UIKit
 
 class SearchViewController: BaseViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var dataSource: [HomeListItem]?
-    private var allDataSource: [HomeListItem]?
+    var dataSource: [DetailModel]?
+    private var allDataSource: [DetailModel]?
     private let searchVC_listView_cell_id = "searchVC_listView_cell_id"
     
-    var searchSelectedAction: ((_ title: String?)->())?
+    var searchSelectedAction: ((_ title: String?)->())? {
+        didSet{
+            print("didset----:\(self.searchSelectedAction)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,76 +60,62 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
             self.allDataSource?.removeAll()
             
         }else {
-            self.allDataSource = [HomeListItem]()
-        }
-        
-        let jsonPath: String? = Bundle.main.path(forResource: "index", ofType: "json")
-        if jsonPath != nil {
-            let data: Data? = FileManager.default.contents(atPath: jsonPath!)
-            
-            if data != nil {
-                let object: [String: Any]? = try? data!.jsonObject() as? [String: Any]
-                
-                if object != nil {
-                    let dataDict: [String: Any]? = object!["data"] as? [String: Any]
-                    print(dataDict)
-                    
-                    if dataDict != nil {
-                        
-                        let list: [Any]? = dataDict?["list"] as? [Any]
-                        let dataModels: [HomePageModel]? = [HomePageModel].deserialize(from: list) as? [HomePageModel]
-                        
-                        if dataModels != nil {
-                            for pageModel in dataModels! {
-                                
-                                self.allDataSource = self.allDataSource! + pageModel.content
-                            }
-                            self.dataSource = self.allDataSource
-                        }
-                    }
-                }
-            }
+            self.allDataSource = [DetailModel]()
         }
         
         
-        self.listView.reloadData()
-        
-    }
-    
-    func p_filter(searchText: String?) {
-        
-        if !String.gl_empty(string: searchText) && self.allDataSource != nil {
-            
-            var allItemTitles: [String] = [String]()
-            
-            for item in self.allDataSource! {
+        if IAPManager.stand.isPay() {
+            // 已经购买
+            let allItems: [HomeListItem] = GetJson.getIndexAllItems()
+            for item in allItems {
                 
-                allItemTitles.append(item.title)
-            }
-            
-            let result: [String]? = ZYPinYinSearch.search(withOriginalArray: allItemTitles, andSearchText: searchText!, andSearchByPropertyName: "") as? [String]
-            
-            if result != nil {
+                let detailList: [DetailModel] = GetJson.getDetailList(index: item.index)
                 
-                self.dataSource?.removeAll()
-                
-                for item in result! {
-                    self.dataSource?.append(HomeListItem(title: item))
-                }
+                self.allDataSource! += detailList
             }
             
         }else {
-            // 为空
-            self.dataSource = self.allDataSource
+            // 未购买
+            let allItems: [HomeListItem] = GetJson.getIndexAllItems()
+            for item in allItems {
+                
+                let detailList: [DetailModel] = GetJson.getDetailList(index: item.index)
+                
+                if detailList.first != nil {
+                    self.allDataSource?.append(detailList.first!)
+                }
+            }
         }
-        
-        self.listView.reloadData()
     }
+    
+        func p_filter(searchText: String?) {
+    
+            if !String.gl_empty(string: searchText) && self.allDataSource != nil {
+
+                let result: [DetailModel]? = ZYPinYinSearch.search(withOriginalArray: self.allDataSource!, andSearchText: searchText ?? "", andSearchByPropertyName: "title") as? [DetailModel]
+                
+                
+                if result != nil {
+    
+                    self.dataSource?.removeAll()
+    
+                    self.dataSource = result!
+                }
+    
+            }else {
+                // 为空
+                self.dataSource = self.allDataSource
+            }
+    
+            self.listView.reloadData()
+        }
     
     //MARK: lazy load
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH - 100, height: 40))
         searchBar.delegate = self
+        searchBar.returnKeyType = .search
+        searchBar.backgroundColor = .white
         return searchBar
     }()
     
@@ -137,39 +127,34 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
     }()
     
     lazy var listView: UITableView = {
-        let listView = UITableView.init(frame: .zero, style: UITableView.Style.plain)
+        let listView = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
+        listView.backgroundColor = ColorTableViewBG
+        listView.separatorStyle = .none
         listView.dataSource = self
         listView.delegate = self
-        listView.register(UITableViewCell.self, forCellReuseIdentifier: searchVC_listView_cell_id)
+        listView.register(DetailTableViewCell.self, forCellReuseIdentifier: searchVC_listView_cell_id)
         return listView
     }()
     
 }
-//
-//extension SearchViewController {
-//    convenience init(allDataSource: [HomeListItem]?) {
-//        self.init()
-//        self.allDataSource = allDataSource
-//    }
-//}
 
 extension SearchViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return self.dataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource?.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let item: HomeListItem = self.dataSource![indexPath.row]
+        let item: DetailModel = self.dataSource![indexPath.section]
         
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: searchVC_listView_cell_id, for: indexPath)
+        let cell: DetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: searchVC_listView_cell_id, for: indexPath) as! DetailTableViewCell
         
-        cell.textLabel?.text = item.title
+        cell.configData(women: item.title, man: item.content)
         
         return cell
     }
@@ -177,12 +162,29 @@ extension SearchViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let item: HomeListItem = self.dataSource![indexPath.row]
+        let item: DetailModel = self.dataSource![indexPath.row]
         
         if self.searchSelectedAction != nil {
             self.searchSelectedAction!(item.title)
         }
     }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.view.endEditing(true)
@@ -203,8 +205,9 @@ extension SearchViewController {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("search bar text did change, search Text: \(searchText)")
-        
-        self.p_filter(searchText: searchText)
+        if String.gl_empty(string: searchText) {
+            self.dataSource?.removeAll()
+            self.listView.reloadData()
+        }
     }
 }
