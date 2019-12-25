@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class SearchViewController: BaseViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -14,11 +15,7 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
     private var allDataSource: [DetailModel]?
     private let searchVC_listView_cell_id = "searchVC_listView_cell_id"
     
-    var searchSelectedAction: ((_ title: String?)->())? {
-        didSet{
-            print("didset----:\(self.searchSelectedAction)")
-        }
-    }
+    var searchSelectedAction: ((_ title: String?)->())? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,51 +61,82 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
         }
         
         
-        if IAPManager.stand.isPay() {
-            // 已经购买
-            let allItems: [HomeListItem] = GetJson.getIndexAllItems()
-            for item in allItems {
+        // 已经购买
+        let allItems: [HomeListItem] = GetJson.getIndexAllItems()
+        for item in allItems {
+            
+            let detailList: [DetailModel] = GetJson.getDetailList(index: item.index)
+            
+            self.allDataSource! += detailList
+        }
+        
+    }
+    
+    func p_filter(searchText: String?) {
+        
+        if !String.gl_empty(string: searchText) && self.allDataSource != nil {
+            
+            let result: [DetailModel]? = ZYPinYinSearch.search(withOriginalArray: self.allDataSource!, andSearchText: searchText ?? "", andSearchByPropertyName: "title") as? [DetailModel]
+            
+            
+            if result != nil {
                 
-                let detailList: [DetailModel] = GetJson.getDetailList(index: item.index)
+                self.dataSource?.removeAll()
                 
-                self.allDataSource! += detailList
+                self.dataSource = result!
             }
             
         }else {
-            // 未购买
-            let allItems: [HomeListItem] = GetJson.getIndexAllItems()
-            for item in allItems {
-                
-                let detailList: [DetailModel] = GetJson.getDetailList(index: item.index)
-                
-                if detailList.first != nil {
-                    self.allDataSource?.append(detailList.first!)
-                }
-            }
+            // 为空
+            self.dataSource = self.allDataSource
         }
+        
+        self.listView.reloadData()
     }
     
-        func p_filter(searchText: String?) {
-    
-            if !String.gl_empty(string: searchText) && self.allDataSource != nil {
-
-                let result: [DetailModel]? = ZYPinYinSearch.search(withOriginalArray: self.allDataSource!, andSearchText: searchText ?? "", andSearchByPropertyName: "title") as? [DetailModel]
-                
-                
-                if result != nil {
-    
-                    self.dataSource?.removeAll()
-    
-                    self.dataSource = result!
-                }
-    
-            }else {
-                // 为空
-                self.dataSource = self.allDataSource
-            }
-    
-            self.listView.reloadData()
+    @objc func p_clickLockBtn() {
+        let alert = UIAlertController.init(title: "解锁更多话术?", message: "点击【确定】解锁更多话术", preferredStyle: UIAlertController.Style.alert)
+        let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+            
+            self.pay()
+            
         }
+        let action2 = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel) { (action) in
+            
+        }
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func pay() {
+        
+        HUD.show(HUDContentType.progress, onView: nil)
+        
+        IAPManager.stand.payProductId(success: {
+            
+            HUD.hide()
+            self.p_unlockAllData()
+            
+        }, fail: {
+            
+            HUD.hide()
+            
+            let alert = UIAlertController.init(title: "", message: "支付失败，请稍后再试", preferredStyle: UIAlertController.Style.alert)
+            let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
+            }
+            
+            alert.addAction(action1)
+            self.present(alert, animated: true, completion: nil)
+        })
+    }
+    
+    func p_unlockAllData() {
+        
+        self.listView.reloadData()
+    }
     
     //MARK: lazy load
     lazy var searchBar: UISearchBar = {
@@ -141,7 +169,15 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
 extension SearchViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.dataSource?.count ?? 0
+        var section = 0
+        
+        section = self.dataSource?.count ?? 0
+        
+        if !IAPManager.stand.isPay() && section > 1 {
+            section = 1
+        }
+        
+        return section
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -168,13 +204,32 @@ extension SearchViewController {
             self.searchSelectedAction!(item.title)
         }
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
+        
+        
+        var view: UIView = UIView()
+        
+        if !IAPManager.stand.isPay() {
+            view = UIView.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 50))
+            let btn = UIButton.init(type: UIButton.ButtonType.custom)
+            btn.frame = view.bounds
+            btn.backgroundColor = UIColor.black
+            btn.alpha = 0.5
+            btn.setImage(UIImage.init(named: "jiesuo"), for: .normal)
+            btn.setTitle("解锁更多话术", for: .normal)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+            btn.setTitleColor(UIColor.white, for: .normal)
+            btn.addTarget(self, action: #selector(p_clickLockBtn), for: .touchUpInside)
+            view.addSubview(btn)
+            
+        }
+        
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -182,7 +237,12 @@ extension SearchViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat.leastNormalMagnitude
+        
+        if !IAPManager.stand.isPay() {
+            return 50
+        }else {
+            return CGFloat.leastNormalMagnitude
+        }
     }
     
     
