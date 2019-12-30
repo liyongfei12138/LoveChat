@@ -25,9 +25,9 @@ class YFHomeHeadView: UIView {
     private lazy var cycleView: ZCycleView = {
         let cycleView = ZCycleView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.2))
         cycleView.placeholderImage = UIImage(named: "icon")
-    cycleView.setUrlsGroup(["https://images.unsplash.com/photo-1577201869197-a6df0ba33623?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80"])
+    cycleView.setUrlsGroup(["https://s2.ax1x.com/2019/12/26/lAbsZq.png"])
         cycleView.delegate = self
-        cycleView.contentMode = .scaleAspectFill
+//        cycleView.col = .scaleToFill
         
         return cycleView
     }()
@@ -98,6 +98,7 @@ extension YFHomeHeadView:ZCycleViewProtocol{
     
     func cycleViewConfigureDefaultCellImageUrl(_ cycleView: ZCycleView, imageView: UIImageView, imageUrl: String?, index: Int) {
        
+        imageView.contentMode = .scaleAspectFill
         imageView.kf.setImage(with: URL(string: imageUrl!), placeholder: cycleView.placeholderImage)
         
     }
