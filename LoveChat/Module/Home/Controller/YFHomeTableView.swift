@@ -8,11 +8,13 @@
 
 import UIKit
 
+protocol ClickSelectDelegate {
+    func clickSelectWith(info:Dictionary<String,Any>,row:Int)
+}
 
 class YFHomeTableView: UITableView {
+    var clickDelegate :ClickSelectDelegate?
     
-
-
 }
  
 extension YFHomeTableView{
@@ -50,7 +52,8 @@ extension YFHomeTableView:UITableViewDelegate,UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
+        self.clickDelegate?.clickSelectWith(info: [:], row: indexPath.row)
        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,7 +69,7 @@ extension YFHomeTableView:UITableViewDelegate,UITableViewDataSource{
         
         let headView = YFCellHeaderView()
         headView.moreBlock = {
-            
+            self.clickDelegate?.clickSelectWith(info: [:], row: 999)
         }
         return headView
     }

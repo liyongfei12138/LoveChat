@@ -28,12 +28,12 @@ struct HomeBannarModel {
     
     static func getBannarData() ->[Dictionary<String,Any>] {
         
-        let info1 = ["icon":"more_about","title":"开场白"]
-        let info2 = ["icon":"more_about","title":"幽默聊天"]
-        let info3 = ["icon":"more_about","title":"搭讪话术"]
-        let info4 = ["icon":"more_about","title":"情感共鸣"]
-        let info5 = ["icon":"more_about","title":"隐性诱惑"]
-        let info6 = ["icon":"more_about","title":"更多"]
+        let info1 = ["icon":"home_1","title":"开场白"]
+        let info2 = ["icon":"home_2","title":"幽默聊天"]
+        let info3 = ["icon":"home_3","title":"搭讪话术"]
+        let info4 = ["icon":"home_4","title":"情感共鸣"]
+        let info5 = ["icon":"home_5","title":"隐性诱惑"]
+        let info6 = ["icon":"home_6","title":"更多"]
         
         
         return [info1,info2,info3,info4,info5,info6]

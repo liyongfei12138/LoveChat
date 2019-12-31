@@ -17,6 +17,7 @@ class YFHomeViewController: BaseViewController {
     }()
     lazy var listView: YFHomeTableView = {
         let listView = YFHomeTableView.init()
+        listView.clickDelegate = self
         return listView
     }()
     
@@ -49,7 +50,7 @@ class YFHomeViewController: BaseViewController {
     func configLayou() {
         self.listView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
-            make.top.equalToSuperview().offset(Nav_topH)
+            make.top.equalToSuperview().offset(Nav_topH-1)
         }
     }
 
@@ -77,7 +78,8 @@ class YFHomeViewController: BaseViewController {
                 self.navigationController?.pushViewController(detailvc, animated: true)
             break
             case 5:
-                
+                let moreVc = YFHomeMoreViewController.init()
+                self.navigationController?.pushViewController(moreVc, animated: true)
             break
         default:
         break
@@ -106,4 +108,17 @@ extension YFHomeViewController:ClicHomekNavDelegate{
     }
     
     
+}
+extension YFHomeViewController:ClickSelectDelegate{
+    
+    func clickSelectWith(info: Dictionary<String, Any>, row: Int) {
+        if row == 999 {
+            let vc = YFSelectViewController()
+            self.navigationController?.pushViewController(vc)
+            
+        }else{
+            let vc = YFSelectDetailViewController()
+            self.navigationController?.pushViewController(vc)
+        }
+    }
 }
