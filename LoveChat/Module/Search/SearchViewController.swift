@@ -8,8 +8,8 @@
 
 import UIKit
 import PKHUD
-
-class SearchViewController: BaseViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+import EmptyDataSet_Swift
+class SearchViewController: BaseViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, EmptyDataSetSource, EmptyDataSetDelegate {
     
     var dataSource: [DetailModel]?
     private var allDataSource: [DetailModel]?
@@ -99,7 +99,6 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
         let action1 = UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default) { (action) in
             
             self.pay()
-            
         }
         let action2 = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel) { (action) in
             
@@ -160,12 +159,15 @@ class SearchViewController: BaseViewController ,UITableViewDelegate, UITableView
         listView.separatorStyle = .none
         listView.dataSource = self
         listView.delegate = self
+        listView.emptyDataSetSource = self
+        listView.emptyDataSetDelegate = self
         listView.register(DetailTableViewCell.self, forCellReuseIdentifier: searchVC_listView_cell_id)
         return listView
     }()
     
 }
 
+/// tableView Delegate
 extension SearchViewController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -251,7 +253,7 @@ extension SearchViewController {
     }
 }
 
-
+/// searchBar delegate
 extension SearchViewController {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -270,4 +272,22 @@ extension SearchViewController {
             self.listView.reloadData()
         }
     }
+}
+
+/// emptyDelegate
+extension SearchViewController {
+    
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        
+        let title: NSAttributedString = NSAttributedString.init(string: "暂无数据", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)])
+        
+        return title
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        
+        return UIImage.init(named: "icon_no_data")
+    }
+    
 }
