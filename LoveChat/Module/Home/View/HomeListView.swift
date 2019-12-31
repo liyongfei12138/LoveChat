@@ -120,43 +120,43 @@ class HomeListView: BaseView, UICollectionViewDelegate, UICollectionViewDataSour
         let title: String? = pageModel?.title
         let color: UIColor = UIColor.init(hexString: pageModel?.color ?? "") ?? ColorTheme
         
-        if indexPath.section == 0 {
-            
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: listHeadReuseId_1, for: indexPath)
-            
-            self.header2.markView.backgroundColor = color
-            self.header2.titleLabel.text = title
-            headerView.addSubview(self.header1)
-            headerView.addSubview(self.header2)
-            
-            self.header1.snp.remakeConstraints { (make) in
-                make.left.top.right.equalToSuperview()
-                make.size.equalTo(CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_1_HEIGHT))
-            }
-            
-            self.header2.snp.remakeConstraints { (make) in
-                make.top.equalTo(self.header1.snp.bottom)
-                make.left.right.equalToSuperview()
-                make.size.equalTo(CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_2_HEIGHT))
-            }
-            return headerView
-        }else {
+//        if indexPath.section == 0 {
+//
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: listHeadReuseId_1, for: indexPath)
+//
+//            self.header2.markView.backgroundColor = color
+//            self.header2.titleLabel.text = title
+//            headerView.addSubview(self.header1)
+//            headerView.addSubview(self.header2)
+//
+//            self.header1.snp.remakeConstraints { (make) in
+//                make.left.top.right.equalToSuperview()
+//                make.size.equalTo(CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_1_HEIGHT))
+//            }
+//
+//            self.header2.snp.remakeConstraints { (make) in
+//                make.top.equalTo(self.header1.snp.bottom)
+//                make.left.right.equalToSuperview()
+//                make.size.equalTo(CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_2_HEIGHT))
+//            }
+//            return headerView
+//        }else {
             let header: HomeSectionView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: listSectionHeadReuseId_1, for: indexPath) as! HomeSectionView
             header.markView.backgroundColor = color
             header.titleLabel.text = title
             return header
-        }
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         var size = CGSize.zero
         
-        if section == 0 {
-            size = CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_1_HEIGHT + HEAD_VIEW_2_HEIGHT)
-        }else {
+//        if section == 0 {
+//            size = CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_1_HEIGHT + HEAD_VIEW_2_HEIGHT)
+//        }else {
             size = CGSize.init(width: SCREEN_WIDTH, height: HEAD_VIEW_2_HEIGHT)
-        }
+//        }
         
         return size
     }

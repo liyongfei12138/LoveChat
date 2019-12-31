@@ -34,7 +34,9 @@ class HomeListCell: UICollectionViewCell {
     func p_initialize() {
         self.contentView.backgroundColor = .white
         self.contentView.cornerRadius = 5.0
-        self.contentView.addShadow()
+        self.contentView.borderColor = UIColor.init(hex: 0x999999)
+        self.contentView.borderWidth = 0.5
+//        self.contentView.addShadow()
     }
     
     func p_setUpUI() {
